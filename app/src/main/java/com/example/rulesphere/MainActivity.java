@@ -1,6 +1,7 @@
 package com.example.rulesphere;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -15,6 +16,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.rulesphere.databinding.ActivityMainBinding;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,18 +37,26 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new SearchFragment());
             else if (item.getItemId() == R.id.favourites)
                 replaceFragment(new FavouritesFragment());
+            else if (item.getItemId() == R.id.myRules)
+                replaceFragment(new MyRulesFragment());
 
             return true;
         });
     }
 
     private void replaceFragment(Fragment fragment) {
+        /*
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
+        */
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.frameLayout, fragment)
+                .commit();
     }
-
-
-
 }

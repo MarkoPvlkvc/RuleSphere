@@ -2,7 +2,6 @@
     <string name="app_name">RuleSphere</string>
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
+    <string name="title_my_rules">My Rules</string>
     <string name="title_favourites">Favourites</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

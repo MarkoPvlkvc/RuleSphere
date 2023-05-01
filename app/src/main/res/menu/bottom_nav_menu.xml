@@ -12,6 +12,11 @@
         android:title="@string/title_search" />
 
     <item
+        android:id="@+id/myRules"
+        android:icon="@drawable/baseline_article_24"
+        android:title="@string/title_my_rules" />
+
+    <item
         android:id="@+id/favourites"
         android:icon="@drawable/baseline_favorite_24"
         android:title="@string/title_favourites" />
