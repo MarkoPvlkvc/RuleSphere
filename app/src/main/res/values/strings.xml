@@ -2,6 +2,6 @@
     <string name="app_name">RuleSphere</string>
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
+    <string name="title_designer">Design</string>
     <string name="title_my_rules">My Rules</string>
-    <string name="title_favourites">Favourites</string>
 </resources>

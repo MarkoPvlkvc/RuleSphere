@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FavouritesFragment#newInstance} factory method to
+ * Use the {@link DesignFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FavouritesFragment extends Fragment {
+public class DesignFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class FavouritesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FavouritesFragment() {
+    public DesignFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +37,8 @@ public class FavouritesFragment extends Fragment {
      * @return A new instance of fragment FavouritesFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FavouritesFragment newInstance(String param1, String param2) {
-        FavouritesFragment fragment = new FavouritesFragment();
+    public static DesignFragment newInstance(String param1, String param2) {
+        DesignFragment fragment = new DesignFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +59,6 @@ public class FavouritesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favourites, container, false);
+        return inflater.inflate(R.layout.fragment_my_rules, container, false);
     }
 }

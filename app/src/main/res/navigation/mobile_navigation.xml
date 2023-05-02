@@ -18,8 +18,14 @@
         tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/favouritesFragment"
-        android:name="com.example.rulesphere.FavouritesFragment"
-        android:label="@string/title_favourites"
-        tools:layout="@layout/fragment_favourites" />
+        android:id="@+id/DesignFragment"
+        android:name="com.example.rulesphere.DesignFragment"
+        android:label="@string/title_designer"
+        tools:layout="@layout/fragment_my_rules" />
+
+    <fragment
+        android:id="@+id/myRulesFragment"
+        android:name="com.example.rulesphere.DesignFragment"
+        android:label="@string/title_my_rules"
+        tools:layout="@layout/fragment_my_rules" />
 </navigation>
