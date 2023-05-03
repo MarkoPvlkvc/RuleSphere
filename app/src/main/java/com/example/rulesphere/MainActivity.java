@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.rulesphere.databinding.ActivityMainBinding;
+import com.google.android.material.search.SearchView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
             if (item.getItemId() == R.id.home)
                 replaceFragment(new HomeFragment());
             else if (item.getItemId() == R.id.search)
-                replaceFragment(new SearchFragment());
+            {
+                SearchView searchView = findViewById(R.id.search_view);
+                searchView.show();
+            }
             else if (item.getItemId() == R.id.favourites)
                 replaceFragment(new DesignFragment());
             else if (item.getItemId() == R.id.myRules)
