@@ -4,4 +4,5 @@
     <string name="title_search">Search</string>
     <string name="title_designer">Design</string>
     <string name="title_my_rules">My Rules</string>
+    <string name="searchbar_hint">Search Quotes...</string>
 </resources>

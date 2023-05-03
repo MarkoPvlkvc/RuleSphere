@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.rulesphere.SearchFragment"
-        android:label="@string/title_search"
-        tools:layout="@layout/fragment_search" />
-
-    <fragment
         android:id="@+id/DesignFragment"
         android:name="com.example.rulesphere.DesignFragment"
         android:label="@string/title_designer"

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.search.SearchView;
 
 /**
  * A simple {@link Fragment} subclass.
