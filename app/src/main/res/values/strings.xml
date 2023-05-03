@@ -4,5 +4,7 @@
     <string name="title_search">Search</string>
     <string name="title_designer">Design</string>
     <string name="title_my_rules">My Rules</string>
-    <string name="searchbar_hint">Search Quotes...</string>
+    <string name="searchbar_hint">Search Quotes…</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

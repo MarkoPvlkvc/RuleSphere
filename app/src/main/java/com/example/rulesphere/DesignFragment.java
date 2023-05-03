@@ -34,7 +34,7 @@ public class DesignFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FavouritesFragment.
+     * @return A new instance of fragment DesignFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static DesignFragment newInstance(String param1, String param2) {
@@ -59,6 +59,6 @@ public class DesignFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_rules, container, false);
+        return inflater.inflate(R.layout.fragment_design, container, false);
     }
 }
