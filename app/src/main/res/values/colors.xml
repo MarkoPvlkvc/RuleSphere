@@ -61,4 +61,6 @@
     <color name="md_theme_dark_surfaceTint">#70D2FF</color>
     <color name="md_theme_dark_outlineVariant">#40484C</color>
     <color name="md_theme_dark_scrim">#000000</color>
+    <color name="md_theme_dark_searchViewInputBackground">#222F35</color>
+    <color name="md_theme_light_searchViewInputBackground">#E1ECF2</color>
 </resources>

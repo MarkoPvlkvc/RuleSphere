@@ -1,0 +1,3296 @@
+[
+  {
+    "ID": 1,
+    "QUOTE": "Ask not what your country can do for you, but what you can do for your country",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John F. Kennedy",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 2,
+    "QUOTE": "A good instructor teaches students how to fight, a great instructor teaches students how to live",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Ricardo Almeida",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 3,
+    "QUOTE": "To be, or not to be, that is the question",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "William Shakespeare",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 4,
+    "QUOTE": "Be kind whenever possible. It is always possible",
+    "CATEGORY": "Religion",
+    "AUTHOR": "14th Dalai Lama",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 5,
+    "QUOTE": "Wonder rather than doubt is the root of all knowledge.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Abraham Joshua Heschel",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 6,
+    "QUOTE": "Whatever you are, be a good one.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Abraham Lincoln",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 7,
+    "QUOTE": "The best way to predict your future is to create it.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Abraham Lincoln",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 8,
+    "QUOTE": "People are just as happy as they make up their minds to be.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Abraham Lincoln",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 9,
+    "QUOTE": "Have an earnestness for death and you will have life.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Abu Bakr",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 10,
+    "QUOTE": "I'm not afraid of storms, for I'm learning to sail my ship",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Aeschylus",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 11,
+    "QUOTE": "Say not that honor is the child of boldness, nor believe thou that the hazard of life alone can pay the price of it: it is not to the action that it is due, but to the manner of performing it.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Akhenaton",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 12,
+    "QUOTE": "Keep your friends close, but your enemies closer.",
+    "CATEGORY": "Movie",
+    "AUTHOR": "Al Pacino",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 13,
+    "QUOTE": "I find myself going to places where I really have no business, speaking to these people in a whole other field that I have no extensive knowledge of. But I do it very often because it scares me.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Alan Alda",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 14,
+    "QUOTE": "It goes against the grain of modern education to teach students to program. What fun is there to making plans, acquiring discipline, organizing thoughts, devoting attention to detail, and learning to be self critical.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Alan Perlis",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 15,
+    "QUOTE": "Men must live and create. Live to the point of tears.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Albert Camus",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 16,
+    "QUOTE": "The only thing that interferes with my learning is my education",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Albert Einstein",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 17,
+    "QUOTE": "Try not to become a man of success but rather to become a man of value",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Albert Einstein",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 18,
+    "QUOTE": "Insanity: doing the same thing over and over again and expecting different results",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Albert Einstein",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 19,
+    "QUOTE": "Strive not to be a success, but rather to be of value.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Albert Einstein",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 20,
+    "QUOTE": "In the middle of difficulty lies opportunity.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Albert Einstein",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 21,
+    "QUOTE": "Knowledge of what is does not open the door directly to what should be.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Albert Einstein",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 22,
+    "QUOTE": "Philosophy is a kind of journey, ever learning yet never arriving at the ideal perfection of truth.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Albert Pike",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 23,
+    "QUOTE": "From their experience or from the recorded experience of others (history), men learn only what their passions and their metaphysical prejudices allow them to learn.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Aldous Huxley",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 24,
+    "QUOTE": "Fools act on imagination without knowledge, pedants act on knowledge without imagination.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Alfred North Whitehead",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 25,
+    "QUOTE": "Tis better to have loved and lost than to have never loved at all.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Alrded Lord Tennyson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 26,
+    "QUOTE": "It is always the simple that produces the marvelous.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Amelia Barr",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 27,
+    "QUOTE": "Our ideals are our better selves.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Amos Bronson Alcott",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 28,
+    "QUOTE": "People living deeply have no fear of death.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Anais Nin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 29,
+    "QUOTE": "Be faithful to that which exists within yourself.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Andre Gide",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 30,
+    "QUOTE": "I don’t think of all the misery but of the beauty that still remains",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Anne Frank",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 31,
+    "QUOTE": "In the long run, the sharpest weapon of all is a kind and gentle spirit.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Anne Frank",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 32,
+    "QUOTE": "I do not believe that sheer suffering teaches. If suffering alone taught, all the world would be wise, since everyone suffers. To suffering must be added mourning, understanding, patience, love, openness and the willingness to remain vulnerable.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Anne Morrow Lindbergh",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 33,
+    "QUOTE": "Develop a passion for learning. If you do, you will never cease to grow",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Anthony J. D'Angelo",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 34,
+    "QUOTE": "Knowing yourself is the beginning of all wisdom.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Aristotle",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 35,
+    "QUOTE": "We are what we repeatedly do; excellence, then, is not an act but a habit.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Aristotle",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 36,
+    "QUOTE": "Happiness depends upon ourselves.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Aristotle",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 37,
+    "QUOTE": "As the biggest library if it is in disorder is not as useful as a small but well-arranged one, so you may accumulate a vast amount of knowledge but it will be of far less value than a much smaller amount if you have not thought it over for yourself.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Arthur Schopenhauer",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 38,
+    "QUOTE": "When I dare to be powerful – to use my strength in the service of my vision, then it becomes less and less important whether I am afraid.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Audre Lorde",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 39,
+    "QUOTE": "Nothing is impossible, the word itself says, ‘I’m possible!’",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Audrey Hepburn",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 40,
+    "QUOTE": "I think sometimes if you are alone, you are freer because your time is your own.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Aung San Suu Kyi",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 41,
+    "QUOTE": "Learn to value yourself, which means: to fight for your happiness.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Ayn Rand",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 42,
+    "QUOTE": "The question isn’t who is going to let me; it’s who is going to stop me.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Ayn Rand",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 43,
+    "QUOTE": "Never let the fear of striking out keep you from playing the game.",
+    "CATEGORY": "Sport",
+    "AUTHOR": "Babe Ruth",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 44,
+    "QUOTE": "Change will not come if we wait for some other person or some other time. We are the ones we’ve been waiting for. We are the change that we seek.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Barack Obama",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 45,
+    "QUOTE": "Kindness and intelligence don't always deliver us from the pitfalls and traps: there are always failures of love, of will, of imagination. There is no way to take the danger out of human relationships.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Barbara Grizzuti Harrison",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 46,
+    "QUOTE": "If you go and talk to most people, they mean well but they don't have much of a breadth on education, of knowledge of understanding what the real issues are and therefore they listen to pundits on television who tell them what they are supposed to think and they keep repeating that until pretty soon they say, 'Oh, well that must be true.'",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Benjamin Carson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 47,
+    "QUOTE": "I am prepared for the worst, but hope for the best.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Benjamin Disraeli",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 48,
+    "QUOTE": "Nurture your minds with great thoughts. To believe in the heroic makes heroes.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Benjamin Disraeli",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 49,
+    "QUOTE": "Early to bed and early to rise makes a man healthy, wealthy, and wise",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Benjamin Franklin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 50,
+    "QUOTE": "God helps those that help themselves",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Benjamin Franklin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 51,
+    "QUOTE": "By failing to prepare, you are preparing to fail",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Benjamin Franklin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 52,
+    "QUOTE": "He that falls in love with himself will have no rivals.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Benjamin Franklin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 53,
+    "QUOTE": "Observe all men, thyself most.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Benjamin Franklin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 54,
+    "QUOTE": "When men and woman die, as poets sung, his heart's the last part moves, her last, the tongue.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Benjamin Franklin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 55,
+    "QUOTE": "Man never made any material as resilient as the human spirit.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Bernard Williams",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 56,
+    "QUOTE": "Science is what you know. Philosophy is what you don’t know.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Bertrand Russell",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 57,
+    "QUOTE": "Power is not given to you. You have to take it.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Beyoncé",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 58,
+    "QUOTE": "Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Bil Keane",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 59,
+    "QUOTE": "Noble deeds that are concealed are most esteemed.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Blaise Pascal",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 60,
+    "QUOTE": "Another factor is the decision, made in 1976, to sharply divide the FBI and the foreign intelligence agencies. The FBI would collect within the United States the foreign intelligence agencies would collect overseas.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Bobby Ray Inman",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 61,
+    "QUOTE": "If we want our children to value education, then we must show our appreciation for knowledge.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Brad Sherman",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 62,
+    "QUOTE": "My number one goal was not getting 'A's' - and I proved it. I was a 'C' student. You have to be ready to learn. If you're not interesting in learning, it doesn't work. As I grew older and wanted to learn and desperately wanted inside information, learning was a lot easier.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Brian Lamb",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 63,
+    "QUOTE": "What a curious phenomenon it is that you can get men to die for the liberty of the world who will not make the little sacrifice that is needed to free themselves from their own individual bondage.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Bruce Barton",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 64,
+    "QUOTE": "The successful warrior is the average man, with laser-like focus",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Bruce Lee",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 65,
+    "QUOTE": "I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Bruce Lee",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 66,
+    "QUOTE": "The successful warrior is the average man, with laser-like focus.",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Bruce Lee",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 67,
+    "QUOTE": "All that we are is the result of what we have thought",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Buddha",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 68,
+    "QUOTE": "The root of suffering is attachment",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Buddha",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 69,
+    "QUOTE": "Holding onto anger is like drinking poison and expecting the other person to die.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Buddha",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 70,
+    "QUOTE": "You are never too old to set another goal or to dream a new dream.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "C.S. Lewis",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 71,
+    "QUOTE": "If you want to be a lion, you must train with lions",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Carlson Gracie",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 72,
+    "QUOTE": "We should not fret for what is past, nor should we be anxious about the future men of discernment deal only with the present moment.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Chanakya",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 73,
+    "QUOTE": "Life is ten percent what happens to you and ninety percent how you respond to it.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Charles Swindoll",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 74,
+    "QUOTE": "You’ll never find a rainbow if you’re looking down.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Charlie Chaplin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 75,
+    "QUOTE": "Man as an individual is a genius. But men in the mass form the headless monster, a great, brutish idiot that goes where prodded.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Charlie Chaplin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 76,
+    "QUOTE": "As children, as we learn what things are, we are slowly learning to dismiss them visually. As adults, entirely submerged in words and concepts, we spend almost all of our time thinking and worrying about the past and the future, hardly ever looking at or engaging with the world visually.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Chris Ware",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 77,
+    "QUOTE": "Later, I realized that the mission had to end in a let-down because the real barrier wasn't in the sky but in our knowledge and experience of supersonic flight.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Chuck Yeager",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 78,
+    "QUOTE": "It does not matter how slowly you go so long as you do not stop",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Confucius",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 79,
+    "QUOTE": "The mixed martial arts way of life will give you focus.",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Conor McGregor",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 80,
+    "QUOTE": "We don’t want to tell our dreams. We want to show them.",
+    "CATEGORY": "Sport",
+    "AUTHOR": "Cristiano Ronaldo",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 81,
+    "QUOTE": "Men of age object too much, consult too long, adventure too little, repent too soon, and seldom drive business home to the full period, but content themselves with a mediocrity of success.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Dale Carnegie",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 82,
+    "QUOTE": "The worst mistake of first contact, made throughout history by individuals on both sides of every new encounter, has been the unfortunate habit of making assumptions. It often proved fatal.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "David Brin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 83,
+    "QUOTE": "A successful man is one who can lay a firm foundation with the bricks others have thrown at him.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "David Brinkley",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 84,
+    "QUOTE": "A man acquainted with history may, in some respect, be said to have lived from the beginning of the world, and to have been making continual additions to his stock of knowledge in every century.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "David Hume",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 85,
+    "QUOTE": "Family is the most important thing in the world",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Diana (Princess of Wales)",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 86,
+    "QUOTE": "You know you’re in love when you can’t fall asleep because reality is finally better than your dreams.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Dr. Seuss",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 87,
+    "QUOTE": "All that we see and seem is but a dream within a dream.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Edgar Allen Poe",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 88,
+    "QUOTE": "The only thing necessary for the triumph of evil is for good men to do nothing.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Edmund Burke",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 89,
+    "QUOTE": "It is, generally, in the season of prosperity that men discover their real temper, principles, and designs.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Edmund Burke",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 90,
+    "QUOTE": "Men are limited by the knowledge of their minds, the worth of their characters and the principles upon which they are building their lives.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Edwin Louis Cole",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 91,
+    "QUOTE": "I have no special talent. I am only passionately curious",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Einstein",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 92,
+    "QUOTE": "The future belongs to those who believe in the beauty of their dreams.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Eleanor Roosevelt",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 93,
+    "QUOTE": "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Eleanor Roosevelt",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 94,
+    "QUOTE": "No one can make you feel inferior without your consent.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Eleanor Roosevelt",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 95,
+    "QUOTE": "The opposite of love is not hate; it’s indifference.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Elie Wiesel",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 96,
+    "QUOTE": "It isn’t where you came from. It’s where you’re going that counts.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ella Fitzgerald",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 97,
+    "QUOTE": "I would like to die on Mars. Just not on impact.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Elon Musk",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 98,
+    "QUOTE": "Better to build a bridge than a wall.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Elton John",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 99,
+    "QUOTE": "Do something worth remembering.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Elvis Presley",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 100,
+    "QUOTE": "Be proud of who you are.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Eminem",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 101,
+    "QUOTE": "We have three centers: the emotional center, the intellectual center, and the physical body center. Each one of them has its own intelligence. How much better would we be if all three were working in unison?",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Erin Gray",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 102,
+    "QUOTE": "In order to write about life first you must live it.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ernest Hemingway",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 103,
+    "QUOTE": "Fear of death increases in exact proportion to increase in wealth.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ernest Hemingway",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 104,
+    "QUOTE": "Research and development needs permanent tax credits to build the technology that spurs our growth. But no government programs alone can get America's students to study more science and math parents must push and help their children to meet this goal.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ernest Istook",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 105,
+    "QUOTE": "Better to die standing than to live on your knees",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ernesto “Che” Guevara",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 106,
+    "QUOTE": "I certainly feel that the time is not far distant when a knowledge of the principles of diet will be an essential part of one's education. Then mankind will eat to live, be able to do better mental and physical work and disease will be less frequent.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Fannie Farmer",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 107,
+    "QUOTE": "Life is like a box of chocolates. You never know what you’re going to get.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Forrest Gump",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 108,
+    "QUOTE": "A little philosophy inclineth man's mind to atheism, but depth in philosophy bringeth men's minds about to religion.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Francis Bacon",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 109,
+    "QUOTE": "Our greatest fear should not be of failure… but of succeeding at things in life that don’t really matter.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Francis Chan",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 110,
+    "QUOTE": "We always love those who admire us, but we do not always love those whom we admire.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Francois de La Rochefoucauld",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 111,
+    "QUOTE": "The big lesson in life, baby, is never be scared of anyone or anything.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Frank Sinatra",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 112,
+    "QUOTE": "A mind is like a parachute. It doesn’t work if it isn’t open.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Frank Zappa",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 113,
+    "QUOTE": "When you reach the end of your rope, tie a knot in it and hang on.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Franklin D. Roosevelt",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 114,
+    "QUOTE": "We have nothing to fear but fear itself.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Franklin D. Roosevelt",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 115,
+    "QUOTE": "Knowledge makes a man unfit to be a slave.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Frederick Douglas",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 116,
+    "QUOTE": "That which does not kill us makes us stronger.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Friedrich Nietzsche",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 117,
+    "QUOTE": "Great indebtedness does not make men grateful, but vengeful and if a little charity is not forgotten, it turns into a gnawing worm.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Friedrich Nietzsche",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 118,
+    "QUOTE": "Success has always been a great liar.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Friedrich Nietzsche",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 119,
+    "QUOTE": "The doer alone learneth",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Friedrich Nietzsche",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 120,
+    "QUOTE": "Knowledge, the object of knowledge and the knower are the three factors which motivate action the senses, the work and the doer comprise the threefold basis of action.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Friedrich Schiller",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 121,
+    "QUOTE": "Show me your hands. Do they have scars from giving? Show me your feet. Are they wounded in service? Show me your heart. Have you left a place for divine love?",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Fulton J. Sheen",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 122,
+    "QUOTE": "Without self knowledge, without understanding the working and functions of his machine, man cannot be free, he cannot govern himself and he will always remain a slave.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "G. I. Gurdjieff",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 123,
+    "QUOTE": "Everything you’ve ever wanted is on the other side of fear.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "George Addair",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 124,
+    "QUOTE": "Others indeed may talk, and write, and fight about liberty, and make an outward pretence to it but the free-thinker alone is truly free.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Berkeley",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 125,
+    "QUOTE": "We don’t stop playing because we grow old; we grow old because we stop playing.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Bernard Shaw",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 126,
+    "QUOTE": "Men are wise in proportion, not to their experience, but to their capacity for experience.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Bernard Shaw",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 127,
+    "QUOTE": "Life levels all men. Death reveals the eminent.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "George Bernard Shaw",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 128,
+    "QUOTE": "Nothing is ever done in this world until men are prepared to kill one another if it is not done.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Bernard Shaw",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 129,
+    "QUOTE": "It is never too late to be what you might have been.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Eliot",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 130,
+    "QUOTE": "It’s never too late to be who you might have been.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Eliot",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 131,
+    "QUOTE": "I'm fed up to the ears with old men dreaming up wars for young men to die in.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George McGovern",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 132,
+    "QUOTE": "Big Brother is watching you",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Orwell",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 133,
+    "QUOTE": "The further a society drifts from the truth, the more it will hate those that speak it.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Orwell",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 134,
+    "QUOTE": "Once you’ve accepted your flaws, no one can use them against you.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George R. R. Martin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 135,
+    "QUOTE": "Those who cannot remember the past are condemned to repeat it.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "George Santayana",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 136,
+    "QUOTE": "Knowledge is not eating, and we cannot expect to devour and possess what we mean. Knowledge is recognition of something absent it is a salutation, not an embrace.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Santayana",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 137,
+    "QUOTE": "The only people that ever stand up and tell the truth are who? Intelligence officers. Because our culture is, never break faith with the truth. We'll tell you, you don't have to drag it out of us.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "George Tenet",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 138,
+    "QUOTE": "I do not believe in a fate that falls on men however they act but I do believe in a fate that falls on them unless they act.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Gilbert K. Chesterton",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 139,
+    "QUOTE": "What affects men sharply about a foreign nation is not so much finding or not finding familiar things it is rather not finding them in the familiar place.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Gilbert K. Chesterton",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 140,
+    "QUOTE": "Remember that the happiest people are not those getting more, but those giving more.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "H. Jackson Brown, Jr.",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 141,
+    "QUOTE": "Life itself is the most wonderful fairy tale.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Hans Christian Andersen",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 142,
+    "QUOTE": "Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Harriet Tubman",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 143,
+    "QUOTE": "If you can’t convince them, confuse them.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Harry S. Truman",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 144,
+    "QUOTE": "Keep your face to the sunshine and you can never see the shadow.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Helen Keller",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 145,
+    "QUOTE": "Knowledge is love and light and vision.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Helen Keller",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 146,
+    "QUOTE": "Intelligence is the faculty of making artificial objects, especially tools to make tools.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Henri Bergson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 147,
+    "QUOTE": "Go confidently in the direction of your dreams. Live the life you have imagined",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Henry David Thoreau",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 148,
+    "QUOTE": "Our life is frittered away by detail… simplify, simplify",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Henry David Thoreau",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 149,
+    "QUOTE": "If you think you can do a thing or think you can’t do a thing, you’re right",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Henry Ford",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 150,
+    "QUOTE": "Every charitable act is a stepping stone toward heaven.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Henry Ward Beecher",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 151,
+    "QUOTE": "One of the things that I did before I ran for president is I was a professional speaker. Not a motivational speaker - an inspirational speaker. Motivation comes from within. You have to be inspired. That's what I do. I inspire people, I inspire the public, I inspire my staff. I inspired the organizations I took over to want to succeed.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Herman Cain",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 152,
+    "QUOTE": "It is better to fail in originality than to succeed in imitation.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Herman Melville",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 153,
+    "QUOTE": "Men trust their ears less than their eyes.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Herodotus",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 154,
+    "QUOTE": "A physician without a knowledge of Astrology has no right to call himself a physician.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Hippocrates",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 155,
+    "QUOTE": "Ideas devour the ages as men are devoured by their passions. When man is cured, human nature will cure itself perhaps.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Honore de Balzac",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 156,
+    "QUOTE": "Wisdom is not wisdom when it is derived from books alone.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Horace",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 157,
+    "QUOTE": "The faith I was born into formed me.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Huston Smith",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 158,
+    "QUOTE": "But although all our knowledge begins with experience, it does not follow that it arises from experience.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Immanuel Kant",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 159,
+    "QUOTE": "If I have seen further than others, it is by standing upon the shoulders of giants.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Isaac Newton",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 160,
+    "QUOTE": "I try to push ideas away, and the ones that will not leave me alone are the ones that ultimately end up happening.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "J. J. Abrams",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 161,
+    "QUOTE": "There are one hundred men seeking security to one able man who is willing to risk his fortune.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "J. Paul Getty",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 162,
+    "QUOTE": "It is our choices, that show what we truly are, far more than our abilities.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "J.K. Rowling",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 163,
+    "QUOTE": "Little by little, one travels far",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "J.R.R. Tolkien",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 164,
+    "QUOTE": "Not all those who wander are lost.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "J.R.R. Tolkien",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 165,
+    "QUOTE": "A man has to learn that he cannot command things, but that he can command himself that he cannot coerce the wills of others, but that he can mold and master his own will: and things serve him who serves Truth people seek guidance of him who is master of himself.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "James Allen",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 166,
+    "QUOTE": "Those who say it can’t be done are usually interrupted by others doing it.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "James Baldwin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 167,
+    "QUOTE": "Be ignorance thy choice, where knowledge leads to woe.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "James Beattie",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 168,
+    "QUOTE": "All men of action are dreamers.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "James Huneker",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 169,
+    "QUOTE": "It will be of little avail to the people that the laws are made by men of their own choice if the laws be so voluminous that they cannot be read, or so incoherent that they cannot be understood.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "James Madison",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 170,
+    "QUOTE": "A friend is someone who gives you total freedom to be yourself.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Jim Morrison",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 171,
+    "QUOTE": "I can't change the direction of the wind, but I can adjust my sails to always reach my destination.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Jimmy Dean",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 172,
+    "QUOTE": "When the going gets tough, the tough get going.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Joe Kennedy",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 173,
+    "QUOTE": "If you aren’t going all the way, why go at all?",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Joe Namath",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 174,
+    "QUOTE": "Don’t be afraid to give up the good to go for the great.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John D. Rockefeller",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 175,
+    "QUOTE": "Power tends to corrupt, and absolute power corrupts absolutely.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John Dalberg-Acton",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 176,
+    "QUOTE": "Those who dare to fail miserably can achieve greatly",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John F. Kennedy",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 177,
+    "QUOTE": "If not us, who? If not now, when?",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John F. Kennedy",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 178,
+    "QUOTE": "Too often we enjoy the comfort of opinion without the discomfort of thought.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John F. Kennedy",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 179,
+    "QUOTE": "We must use time as a tool, not as a couch.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John F. Kennedy",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 180,
+    "QUOTE": "Those who dare to fail miserably can achieve greatly.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John F. Kennedy",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 181,
+    "QUOTE": "We now witness the constructive work on a foundation that will endure through the ages. That foundation is the god of science - revealed to us in terms that will harmonize with our intelligence.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John Fiske",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 182,
+    "QUOTE": "I have been astonished that men could die martyrs for religion - I have shuddered at it. I shudder no more - I could be martyred for my religion - Love is my religion - I could die for that.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "John Keats",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 183,
+    "QUOTE": "Life is what happens when you’re busy making other plans.",
+    "CATEGORY": "Music",
+    "AUTHOR": "John Lennon",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 184,
+    "QUOTE": "Ideas shape the course of history.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John Maynard Keynes",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 185,
+    "QUOTE": "A study of the history of opinion is a necessary preliminary to the emancipation of the mind.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John Maynard Keynes",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 186,
+    "QUOTE": "The power of imagination makes us infinite.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "John Muir",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 187,
+    "QUOTE": "As this body of knowledge has evolved, a much more critical job for researchers and scientists has evolved into explaining and educating policy makers and the public to the risks of global warming and the possible consequences of action or of no action.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John Olver",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 188,
+    "QUOTE": "The person who has nothing for which he is willing to fight, nothing which is more important than his own personal safety, is a miserable creature and has no chance of being free unless made and kept so by the exertions of better men than himself.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "John Stuart Mill",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 189,
+    "QUOTE": "May you live all the days of your life.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Jonathan Swift",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 190,
+    "QUOTE": "The development of the telescope, together with increased knowledge of things, brought men to see that the earth is not what man had once thought it to be.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Joseph Franklin Rutherford",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 191,
+    "QUOTE": "Challenges are what make life interesting and overcoming them is what makes life meaningful.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Joshua J. Marine",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 192,
+    "QUOTE": "I came, I saw, I conquered",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Julius Caesar",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 193,
+    "QUOTE": "Black people don't have an accurate idea of their history, which has been either suppressed or distorted.",
+    "CATEGORY": "Sport",
+    "AUTHOR": "Kareem Abdul-Jabbar",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 194,
+    "QUOTE": "History does nothing it does not possess immense riches, it does not fight battles. It is men, real, living, who do all this.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Karl Marx",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 195,
+    "QUOTE": "That free will was demonstrated in the placing of temptation before man with the command not to eat of the fruit of the tree which would give him a knowledge of good and evil, with the disturbing moral conflict to which that awareness would give rise.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Kenneth Scott Latourette",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 196,
+    "QUOTE": "Yesterday we obeyed kings and bent our necks before emperors. But today we kneel only to truth, follow only beauty, and obey only love.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Khalil Gibran",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 197,
+    "QUOTE": "The most pitiful among men is he who turns his dreams into silver and gold.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Khalil Gibran",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 198,
+    "QUOTE": "We need fantasy to survive reality.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Lady Gaga",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 199,
+    "QUOTE": "You laugh at me because I’m different I laugh at you because you’re all the same.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Lady Gaga",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 200,
+    "QUOTE": "The journey of a thousand miles begins with one step",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Lao Tzu",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 201,
+    "QUOTE": "Health is the greatest possession. Contentment is the greatest treasure. Confidence is the greatest friend. Non-being is the greatest joy.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Lao Tzu",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 202,
+    "QUOTE": "In all history there is no war which was not hatched by the governments, the governments alone, independent of the interests of the people, to whom war is always pernicious even when successful.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Leo Tolstoy",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 203,
+    "QUOTE": "Simplicity is the ultimate sophistication.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Leonardo da Vinci",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 204,
+    "QUOTE": "Shoot for the moon. Even if you miss, you’ll land among the stars.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Les Brown",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 205,
+    "QUOTE": "One of the functions of intelligence is to take account of the dangers that come from trusting solely to the intelligence.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Lewis Mumford",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 206,
+    "QUOTE": "A lion doesn’t concern himself with the opinions of the sheep.",
+    "CATEGORY": "Sport",
+    "AUTHOR": "Lionel Messi",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 207,
+    "QUOTE": "If I'm alone too long I think too much, and I'm not interested in doing that. That won't lead anywhere good, I'm sure. If I'm busy I tend to stay out of trouble. An idle mind is the devil's playground.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Lisa Marie Presley",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 208,
+    "QUOTE": "Men think highly of those who rise rapidly in the world whereas nothing rises quicker than dust, straw, and feathers.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Lord Byron",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 209,
+    "QUOTE": "Ability is of little account without opportunity.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Lucille Ball",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 210,
+    "QUOTE": "You only live once, but if you do it right, once is enough.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Mae West",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 211,
+    "QUOTE": "Nonviolence is a weapon of the strong",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Mahatma Gandhi",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 212,
+    "QUOTE": "The weak can never forgive. Forgiveness is the attribute of the strong",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Mahatma Gandhi",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 213,
+    "QUOTE": "Nobody can hurt me without my permission.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Mahatma Gandhi",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 214,
+    "QUOTE": "You must be the change you wish to see in the world.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Mahatma Gandhi",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 215,
+    "QUOTE": "A man who stands for nothing will fall for anything",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Malcolm X",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 216,
+    "QUOTE": "Stumbling is not falling.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Malcolm X",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 217,
+    "QUOTE": "The future belongs to those who prepare for it today.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Malcolm X",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 218,
+    "QUOTE": "The future belongs to those who prepare for it today. Malcolm X",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Malcom X",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 219,
+    "QUOTE": "Happiness serves hardly any other purpose than to make unhappiness possible.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Marcel Proust",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 220,
+    "QUOTE": "Despise not death, but welcome it, for nature wills it like all else.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Marcus Aurelius",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 221,
+    "QUOTE": "Whatever you do, do with all your might.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Marcus Tullius Cicero",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 222,
+    "QUOTE": "If I err in belief that the souls of men are immortal, I gladly err, nor do I wish this error which gives me pleasure to be wrested from me while I live.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Marcus Tullius Cicero",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 223,
+    "QUOTE": "Live as brave men and if fortune is adverse, front its blows with brave hearts.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Marcus Tullius Cicero",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 224,
+    "QUOTE": "Always remember that you are absolutely unique. Just like everyone else.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Margaret Meade",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 225,
+    "QUOTE": "Fear is stupid. So are regrets",
+    "CATEGORY": "Music",
+    "AUTHOR": "Marilyn Monroe",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 226,
+    "QUOTE": "We are all of us stars, and we deserve to twinkle.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Marilyn Monroe",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 227,
+    "QUOTE": "The essential elements of giving are power and love - activity and affection - and the consciousness of the race testifies that in the high and appropriate exercise of these is a blessedness greater than any other.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Mark Hopkins",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 228,
+    "QUOTE": "Whenever you find yourself on the side of the majority, it is time to pause and reflect",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Mark Twain",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 229,
+    "QUOTE": "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Mark Twain",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 230,
+    "QUOTE": "Sing like no one’s listening, love like you’ve never been hurt, dance like nobody’s watching, and live like it’s heaven on earth.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Mark Twain",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 231,
+    "QUOTE": "If you tell the truth, you don’t have to remember anything.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Mark Twain",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 232,
+    "QUOTE": "Time you enjoy wasting is not wasted time.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Marthe Troly-Curtin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 233,
+    "QUOTE": "If you don’t like something, change it. If you can’t change it, change your attitude.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Maya Angelou",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 234,
+    "QUOTE": "You will face many defeats in life, but never let yourself be defeated.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Maya Angelou",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 235,
+    "QUOTE": "Try to be a rainbow in someone else’s cloud.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Maya Angelou",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 236,
+    "QUOTE": "My whole life, I had been taught to read and study, to seek understanding in knowledge of history, of cultures.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Meghan O'Rourke",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 237,
+    "QUOTE": "A human being has so many skins inside, covering the depths of the heart. We know so many things, but we don't know ourselves! Why, thirty or forty skins or hides, as thick and hard as an ox's or bear's, cover the soul. Go into your own ground and learn to know yourself there.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Meister Eckhart",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 238,
+    "QUOTE": "The single most important thing in a child's performance is the quality of the teacher. Making sure a child spends the maximum amount of time with inspirational teachers is the most important thing.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Michael Gove",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 239,
+    "QUOTE": "Children themselves know they are being cheated. Ultimately we owe it to our children. They are in school for 190 days a year. Every moment they spend learning is precious. If a year goes by and they are not being stretched and excited, that blights their life",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Michael Gove",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 240,
+    "QUOTE": "I’ve failed over and over and over again in my life and that is why I succeed",
+    "CATEGORY": "Sport",
+    "AUTHOR": "Michael Jordan",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 241,
+    "QUOTE": "Genius is eternal patience.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Michelangelo",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 242,
+    "QUOTE": "My work requires acting at its most committed - it demands actors of enormous resilience, but also intelligence and wit. It doesn't work for narcissistic or selfish actors.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Mike Leigh",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 243,
+    "QUOTE": "And remember don't high post when you're far from home, and high posting when you're all alone.",
+    "CATEGORY": "Music",
+    "AUTHOR": "Mos Def",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 244,
+    "QUOTE": "Instead, it appears to be a particular mark of beauty that it is considered with tranquil satisfaction that it pleases if we also do not possess it and we are still far removed from demanding to possess it.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Moses Mendelssohn",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 245,
+    "QUOTE": "If you judge people, you have no time to love them",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Mother Teresa",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 246,
+    "QUOTE": "Peace begins with a smile",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Mother Teresa",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 247,
+    "QUOTE": "I alone cannot change the world, but I can cast a stone across the water to create many ripples.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Mother Teresa",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 248,
+    "QUOTE": "I am the greatest, I said that even before I knew I was.",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Muhammad Ali",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 249,
+    "QUOTE": "When small men attempt great enterprises, they always end by reducing them to the level of their mediocrity.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Napoleon Bonaparte",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 250,
+    "QUOTE": "Men are more easily governed through their vices than through their virtues.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Napoleon Bonaparte",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 251,
+    "QUOTE": "Cherish your visions and your dreams as they are the children of your soul, the blueprints of your ultimate achievements",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Napoleon Hill",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 252,
+    "QUOTE": "More gold has been mined from the thoughts of men than has been taken from the earth.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Napoleon Hill",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 253,
+    "QUOTE": "That’s one small step for a man, one giant leap for mankind",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Neil Armstrong",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 254,
+    "QUOTE": "Education is the most powerful weapon which you can use to change the world",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Nelson Mandela",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 255,
+    "QUOTE": "It always seems impossible until it’s done",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Nelson Mandela",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 256,
+    "QUOTE": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Nelson Mandela",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 257,
+    "QUOTE": "Only free men can negotiate. A prisoner cannot enter into contracts.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Nelson Mandela",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 258,
+    "QUOTE": "To know that we know what we know, and to know that we do not know what we do not know, that is true knowledge.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Nicolaus Copernicus",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 259,
+    "QUOTE": "I don’t care that they stole my idea… I care that they don’t have any of their own.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Nikola Tesla",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 260,
+    "QUOTE": "Dream big and dare to fail.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Norman Vaughan",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 261,
+    "QUOTE": "Change your thoughts and you change your world.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Norman Vincent Peale",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 262,
+    "QUOTE": "It's always easier if you have the support of your family, if you're not alone. I came from a country that has been through a lot of troubles in the last 20 to 30 years, but we have been through them together.",
+    "CATEGORY": "Sport",
+    "AUTHOR": "Novak Djokovic",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 263,
+    "QUOTE": "All limitations are self-imposed.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Oliver Wendel Holmes",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 264,
+    "QUOTE": "Turn your wounds into wisdom",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Oprah Winfrey",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 265,
+    "QUOTE": "Be yourself; everyone else is already taken",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Oscar Wilde",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 266,
+    "QUOTE": "Always forgive your enemies; nothing annoys them so much.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Oscar Wilde",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 267,
+    "QUOTE": "Good artists copy, great artists steal",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Pablo Picasso",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 268,
+    "QUOTE": "When we strive to become better than we are, everything around us becomes better too.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Paolo Coelho",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 269,
+    "QUOTE": "There is nothing so useless as doing efficiently that which should not be done at all.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Peter Drucker",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 270,
+    "QUOTE": "We cannot stop natural disasters but we can arm ourselves with knowledge: so many lives wouldn't have to be lost if there was enough disaster preparedness.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Petra Nemcova",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 271,
+    "QUOTE": "The greatest wealth is to live content with little",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Plato",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 272,
+    "QUOTE": "Wise men talk because they have something to say; fools, because they have to say something.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Plato",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 273,
+    "QUOTE": "You can discover more about a person in an hour of play than in a year of conversation.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Plato",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 274,
+    "QUOTE": "All men are by nature equal, made all of the same earth by one Workman and however we deceive ourselves, as dear unto God is the poor peasant as the mighty prince.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Plato",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 275,
+    "QUOTE": "I would rather excel in the knowledge of what is excellent, than in the extent of my power and possessions.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Plutarch",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 276,
+    "QUOTE": "The future starts today, not tomorrow.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Pope John Paul II",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 277,
+    "QUOTE": "I have looked into your eyes with my eyes. I have put my heart near your heart.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Pope John XXIII",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 278,
+    "QUOTE": "Of all human activities, man's listening to God is the supreme act of his reasoning and will.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Pope Paul VI",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 279,
+    "QUOTE": "I want to be with those who know secret things or else alone.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Rainer Maria Rilke",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 280,
+    "QUOTE": "Now all the knowledge and wisdom that is in creatures, whether angels or men, is nothing else but a participation of that one eternal, immutable and increased wisdom of God.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ralph Cudworth",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 281,
+    "QUOTE": "A great man is always willing to be little",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ralph Waldo Emerson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 282,
+    "QUOTE": "The only person you are destined to become is the person you decide to be.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ralph Waldo Emerson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 283,
+    "QUOTE": "What you do speaks so loudly that I cannot hear what you say.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ralph Waldo Emerson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 284,
+    "QUOTE": "Do not go where the path may lead; go instead where there is no path and leave a trail.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ralph Waldo Emerson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 285,
+    "QUOTE": "Great geniuses have the shortest biographies.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ralph Waldo Emerson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 286,
+    "QUOTE": "Men admire the man who can organize their wishes and thoughts in stone and wood and steel and brass.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ralph Waldo Emerson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 287,
+    "QUOTE": "Nothing astonishes men so much as common sense and plain dealing.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ralph Waldo Emerson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 288,
+    "QUOTE": "Knowledge is knowing that we cannot know",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ralph Waldo Emerson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 289,
+    "QUOTE": "I think, therefore I am",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "René Descartes",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 290,
+    "QUOTE": "We design our lives through the power of choices.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Richard Bach",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 291,
+    "QUOTE": "The meaning I picked, the one that changed my life: Overcome fear, behold wonder.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Richard Bach",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 292,
+    "QUOTE": "You are always free to change your mind and choose a different future, or a different past.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Richard Bach",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 293,
+    "QUOTE": "In three words I can sum up everything I’ve learned about life: It goes on.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Robert Frost",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 294,
+    "QUOTE": "Tough times never last but tough people do.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Robert H. Schuller",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 295,
+    "QUOTE": "I'm so accustomed to being alone.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Robert M. Gates",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 296,
+    "QUOTE": "You realize that however much you don't think about death - or think that's for other people - you're just an organism living from day to day. I'm just grateful I'm here.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Robin Gibb",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 297,
+    "QUOTE": "Argument is conclusive, but it does not remove doubt, so that the mind may rest in the sure knowledge of the truth, unless it finds it by the method of experiment.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Roger Bacon",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 298,
+    "QUOTE": "We can't help everyone, but everyone can help someone.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ronald Reagan",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 299,
+    "QUOTE": "I'm a courageous person because I'm a scared person",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Ronda Rousey",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 300,
+    "QUOTE": "I have learned over the years that when one’s mind is made up, this diminishes fear; knowing what must be done does away with fear.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Rosa Parks",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 301,
+    "QUOTE": "All of them had so much to offer us as far as, you know, knowledge in the music industry, and especially Randy and Paula because, you know, they've been artists.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Ruben Studdard",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 302,
+    "QUOTE": "It was pride that changed angels into devils it is humility that makes men as angels.",
+    "CATEGORY": "Religion",
+    "AUTHOR": "Saint Augustine",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 303,
+    "QUOTE": "Have no fear of perfection, you’ll never reach it.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Salvador Dali",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 304,
+    "QUOTE": "A great mind becomes a great fortune.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Seneca",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 305,
+    "QUOTE": "For evil to flourish, it only requires good men to do nothing.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Simon Wiesenthal",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 306,
+    "QUOTE": "The history of man is the history of crimes, and history can repeat. So information is a defence. Through this we can build, we must build, a defence against repetition.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Simon Wiesenthal",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 307,
+    "QUOTE": "A man is but what he knows.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Sir Francis Bacon",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 308,
+    "QUOTE": "The unexamined life is not worth living",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Socrates",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 309,
+    "QUOTE": "My philosophy of leadership is to surround myself with good people who have ability, judgment and knowledge, but above all, a passion for service.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Sonny Perdue",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 310,
+    "QUOTE": "Life is not a problem to be solved, but a reality to be experienced.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Søren Kierkegaard",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 311,
+    "QUOTE": "We have been working hard to think about what our combined needs are going to be in the way of intelligence capabilities, not today but 15 to 20 years in the future.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Stephen Cambone",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 312,
+    "QUOTE": "Life would be tragic if it weren’t funny.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Stephen Hawking",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 313,
+    "QUOTE": "Get busy living or get busy dying.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Stephen King",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 314,
+    "QUOTE": "Stay hungry, stay foolish",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Steve Jobs",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 315,
+    "QUOTE": "Everyone here has the sense that right now is one of those moments when we are influencing the future.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Steve Jobs",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 316,
+    "QUOTE": "Many people have the ambition to succeed in their work; they may even have special aptitude for their job. And yet they do not move ahead. Why? Perhaps they think that since they can master the job, there is no need to master themselves.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Stevenson, John",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 317,
+    "QUOTE": "In the beginners mind there are many possibilities, but in the expert's mind there are few.",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Suzuki",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 318,
+    "QUOTE": "Happiness is a direction, not a place.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Sydney J. Harris",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 319,
+    "QUOTE": "I believe there's an inner power that makes winners or losers. And the winners are the ones who really listen to the truth of their hearts.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Sylvester Stallone",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 320,
+    "QUOTE": "I believe there's an inner power that makes winners or losers. And the winners are the ones who really listen to the truth of their hearts.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Sylvester Stallone",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 321,
+    "QUOTE": "Think with your whole body.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Taisen Deshimaru",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 322,
+    "QUOTE": "Do what you can, with what you have, where you are.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Teddy Roosevelt",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 323,
+    "QUOTE": "Big jobs usually go to the men who prove their ability to outgrow small ones.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Theodore Roosevelt",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 324,
+    "QUOTE": "Genius is one percent inspiration, ninety-nine percent perspiration",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Thomas A. Edison",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 325,
+    "QUOTE": "If no other knowledge deserves to be called useful but that which helps to enlarge our possessions or to raise our station in society, then Mythology has no claim to the appellation.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Thomas Bulfinch",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 326,
+    "QUOTE": "Many of life’s failures are people who did not realize how close they were to success when they gave up.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Thomas Edison",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 327,
+    "QUOTE": "Great hopes make great men.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Thomas Fuller",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 328,
+    "QUOTE": "Wine hath drowned more men than the sea.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Thomas Fuller",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 329,
+    "QUOTE": "All the problems of the world could be settled easily if men were only willing to think. The trouble is that men very often resort to all sorts of devices in order not to think, because thinking is such hard work.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Thomas J. Watson",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 330,
+    "QUOTE": "All interest in disease and death is only another expression of interest in life.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Thomas Mann",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 331,
+    "QUOTE": "Education is not the piling on of learning, information, data, facts, skills, or abilities - that's training or instruction - but is rather making visible what is hidden as a seed",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Thomas Moore",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 332,
+    "QUOTE": "The ability to take pleasure in one's life is a skill and is a kind of intelligence. So intelligence is a hard thing to evaluate and it manifests itself in so many different ways. I do think the ability to know how to live a life and not be miserable is a sign of that.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Todd Solondz",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 333,
+    "QUOTE": "The only impossible journey is the one you never begin.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Tony Robbins",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 334,
+    "QUOTE": "There is no such thing as failure. There are only results.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Tony Robbins",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 335,
+    "QUOTE": "It is in your moments of decision that your destiny is shaped.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Tony Robbins",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 336,
+    "QUOTE": "It’s not whether you get knocked down, it’s whether you get up",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Vince Lombardi",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 337,
+    "QUOTE": "Winners never quit, and quitters never win.",
+    "CATEGORY": "Sport",
+    "AUTHOR": "Vince Lombardi",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 338,
+    "QUOTE": "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack of will",
+    "CATEGORY": "Sport",
+    "AUTHOR": "Vince Lombardi",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 339,
+    "QUOTE": "Doubt is not a pleasant condition, but certainty is absurd.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Voltaire",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 340,
+    "QUOTE": "Every man is guilty of all the good he did not do.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Voltaire",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 341,
+    "QUOTE": "Those who make you believe absurdities can make you commit atrocities.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Voltaire",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 342,
+    "QUOTE": "Originality is nothing but judicious imitation.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Voltaire",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 343,
+    "QUOTE": "Satire lies about literary men while they live and eulogy lies about them when they die.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Voltaire",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 344,
+    "QUOTE": "Men use thought only as authority for their injustice, and employ speech only to conceal their thoughts.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Voltaire",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 345,
+    "QUOTE": "It is an infantile superstition of the human spirit that virginity would be thought a virtue and not the barrier that separates ignorance from knowledge.",
+    "CATEGORY": "Philosophy",
+    "AUTHOR": "Voltaire",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 346,
+    "QUOTE": "It’s fun to do the impossible.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Walt Disney",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 347,
+    "QUOTE": "The way to get started is to quit talking and begin doing.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Walt Disney",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 348,
+    "QUOTE": "All our dreams can come true if we have the courage to pursue them.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Walt Disney",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 349,
+    "QUOTE": "The best history is but like the art of Rembrandt it casts a vivid light on certain selected causes, on those which were best and greatest it leaves all the rest in shadow and unseen.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Walter Bagehot",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 350,
+    "QUOTE": "All human knowledge takes the form of interpretation.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Walter Benjamin",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 351,
+    "QUOTE": "Someone’s sitting in the shade today because someone planted a tree a long time ago.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Warren Buffett",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 352,
+    "QUOTE": "Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Washington, Booker T.",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 353,
+    "QUOTE": "You miss 100 percent of the shots you never take",
+    "CATEGORY": "Sport",
+    "AUTHOR": "Wayne Gretzky",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 354,
+    "QUOTE": "To attempt this would be like seeing without eyes or directing the gaze of knowledge behind one's own eye. Modern science can acknowledge no other than this epistemological stand-point.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Wilhelm Dilthey",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 355,
+    "QUOTE": "On the recollection of so many and great favours and blessings, I now, with a high sense of gratitude, presume to offer up my sincere thanks to the Almighty, the Creator and Preserver.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "William Bartram",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 356,
+    "QUOTE": "I heard the old, old, men say 'all that's beautiful drifts away, like the waters.'",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "William Butler Yeats",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 357,
+    "QUOTE": "I think education is both using and improving knowledge and that changes the whole picture.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "William Glasser",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 358,
+    "QUOTE": "Wisely, and slow. They stumble that run fast",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "William Shakespeare",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 359,
+    "QUOTE": "Love all, trust a few, do wrong to none",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "William Shakespeare",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 360,
+    "QUOTE": "It is not in the stars to hold our destiny but in ourselves.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "William Shakespeare",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 361,
+    "QUOTE": "A fool thinks himself to be wise, but a wise man knows himself to be a fool.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "William Shakespeare",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 362,
+    "QUOTE": "Keep calm and carry on",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Winston Churchill",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 363,
+    "QUOTE": "If you’re going through hell, keep going.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Winston Churchill",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 364,
+    "QUOTE": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Winston Churchill",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 365,
+    "QUOTE": "There are few people who will make mistakes with fire after having once been burned.",
+    "CATEGORY": "Martial Arts",
+    "AUTHOR": "Yamamoto Tsunetomo",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  },
+  {
+    "ID": 366,
+    "QUOTE": "I arise full of eagerness and energy, knowing well what achievement lies ahead of me.",
+    "CATEGORY": "Famous People",
+    "AUTHOR": "Zane Grey",
+    "FAVORITE": "false",
+    "PERSONAL": "false",
+    "ADMIN_PICKED": "false"
+  }
+]
