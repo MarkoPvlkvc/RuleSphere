@@ -29,6 +29,9 @@ public interface QuoteDao {
     @Query("SELECT * FROM Quote WHERE FAVORITE = 1")
     List<Quote> getFavorites();
 
+    @Query("SELECT * FROM Quote WHERE ID = :id")
+    Quote getQuote(String id);
+
     @Query("SELECT * FROM Quote WHERE PERSONAL = 1")
     List<Quote> getPersonal();
 

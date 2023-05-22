@@ -1,12 +1,28 @@
 package com.example.rulesphere;
 
+import android.content.res.ColorStateList;
+import android.content.res.Configuration;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.button.MaterialButtonToggleGroup;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +74,43 @@ public class MyRulesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_rules, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_my_rules, container, false);
+
+        MainActivity mainActivity = (MainActivity) getActivity();
+        RecyclerView rv = view.findViewById(R.id.recycler_view_myRules);
+        mainActivity.updateMyRulesList(rv);
+
+        boolean isNightMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        MaterialButtonToggleGroup materialButtonToggleGroup = view.findViewById(R.id.myRulesCategory);
+
+        materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
+            @Override
+            public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
+                for (int i = 0; i < materialButtonToggleGroup.getChildCount(); i++) {
+                    MaterialButton materialButton = (MaterialButton) materialButtonToggleGroup.getChildAt(i);
+
+                    if (materialButtonToggleGroup.getCheckedButtonId() == materialButton.getId()) {
+                        if (isNightMode) {
+                            materialButton.setBackgroundColor(getContext().getColor(R.color.md_theme_light_primary));
+                        } else {
+                            materialButton.setBackgroundColor(getContext().getColor(com.google.android.material.R.color.material_dynamic_primary80));
+                        }
+
+                        continue;
+                    }
+
+                    if (isNightMode) {
+                        materialButton.setBackgroundColor(getContext().getColor(R.color.md_theme_dark_secondaryContainer));
+                    } else {
+                        materialButton.setBackgroundColor(getContext().getColor(R.color.md_theme_light_secondaryContainer));
+                    }
+                }
+            }
+        });
+
+        materialButtonToggleGroup.check(materialButtonToggleGroup.getChildAt(0).getId());
+
+        return view;
     }
 }

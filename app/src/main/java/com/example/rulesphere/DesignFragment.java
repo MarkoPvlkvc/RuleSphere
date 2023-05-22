@@ -1,12 +1,25 @@
 package com.example.rulesphere;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +71,46 @@ public class DesignFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_design, container, false);
+        View view = inflater.inflate(R.layout.fragment_design, container, false);
+
+        int wallpaperColor1 = R.color.wallpaperColor1;
+        int wallpaperColor2 = R.color.wallpaperColor2;
+        int wallpaperColor3 = R.color.wallpaperColor3;
+
+        MaterialCardView wallpaper = view.findViewById(R.id.wallpaper);
+        MaterialButton wallpaperColor1Button = view.findViewById(R.id.wallpaperColor1);
+        MaterialButton wallpaperColor2Button = view.findViewById(R.id.wallpaperColor2);
+        MaterialButton wallpaperColor3Button = view.findViewById(R.id.wallpaperColor3);
+
+        View.OnClickListener wallpaperColorChange = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MaterialButton materialButton = (MaterialButton) view;
+                String buttonId = getResources().getResourceName(materialButton.getId());
+                char buttonIdNumber = buttonId.charAt(buttonId.length() - 1);
+
+                int color = 0;
+                switch (buttonIdNumber) {
+                    case '1':
+                        color = wallpaperColor1;
+                        break;
+                    case '2':
+                        color = wallpaperColor2;
+                        break;
+                    case '3':
+                        color = wallpaperColor3;
+                        break;
+                }
+
+                if (color != 0)
+                    wallpaper.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(color)));
+            }
+        };
+
+        wallpaperColor1Button.setOnClickListener(wallpaperColorChange);
+        wallpaperColor2Button.setOnClickListener(wallpaperColorChange);
+        wallpaperColor3Button.setOnClickListener(wallpaperColorChange);
+
+        return view;
     }
 }

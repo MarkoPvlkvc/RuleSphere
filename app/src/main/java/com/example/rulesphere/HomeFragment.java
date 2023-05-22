@@ -1,16 +1,12 @@
 package com.example.rulesphere;
 
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import androidx.appcompat.view.ContextThemeWrapper;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import android.util.TypedValue;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,7 +66,7 @@ public class HomeFragment extends Fragment {
     }
 
     MaterialCardView materialCardView;
-    MaterialButton favouriteButton;
+    MaterialButton favoriteButton;
     MaterialButton createQuoteButton;
     MaterialButton designWallpaperButton;
     ScrollView scrollView;
@@ -85,7 +81,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         materialCardView = view.findViewById(R.id.ruleCard);
-        favouriteButton = view.findViewById(R.id.favouriteButton);
+        favoriteButton = view.findViewById(R.id.favoriteButton);
         createQuoteButton = view.findViewById(R.id.createQuoteButton);
         designWallpaperButton = view.findViewById(R.id.designWallpaperButton);
         scrollView = view.findViewById(R.id.homeScrolLView);
@@ -103,30 +99,64 @@ public class HomeFragment extends Fragment {
         materialCardView.setCheckedIcon(null);
         materialCardView.setStrokeWidth(0);
 
-        materialCardView.setOnClickListener(v -> {
+        favoriteButton.setOnClickListener(v -> {
             materialCardView.toggle();
 
-            favouriteButton.setChecked(materialCardView.isChecked());
-            favouriteButton.setBackground(null);
-
+            favoriteButton.setBackground(null);
             materialCardView.setCardForegroundColor(null);
-            Drawable drawable = favouriteButton.getCompoundDrawables()[0].mutate();
+
             if (materialCardView.isChecked()) {
                 materialCardView.setStrokeWidth(5);
-
-                /* CHANGE CARD HEART COLOR
-                drawable.setColorFilter(getResources().getColor(com.google.android.material.R.color.m3_ref_palette_dynamic_primary80), PorterDuff.Mode.SRC_ATOP);
-                favouriteButton.setCompoundDrawables(drawable, null, null, null);
-                */
             } else {
                 materialCardView.setStrokeWidth(0);
-
-                drawable.setColorFilter(null);
-                favouriteButton.setCompoundDrawables(drawable, null, null, null);
             }
 
             Animation animation = AnimationUtils.loadAnimation(view.getContext(), R.anim.like_anim);
-            favouriteButton.startAnimation(animation);
+            favoriteButton.startAnimation(animation);
+        });
+
+        materialCardView.setOnClickListener(new View.OnClickListener() {
+            boolean isDoubleClick = false;
+            Handler handler = new Handler();
+            final int DOUBLE_CLICK_DELAY = 300;
+
+            @Override
+            public void onClick(View view) {
+                if (!isDoubleClick) {
+                    isDoubleClick = true;
+                    handler.postDelayed(() -> {
+                        isDoubleClick = false;
+                    }, DOUBLE_CLICK_DELAY);
+                } else {
+                    materialCardView.toggle();
+
+                    favoriteButton.setChecked(materialCardView.isChecked());
+                    favoriteButton.setBackground(null);
+
+                    // Makne overlay koji je preko teksta kad je isChecked
+                    materialCardView.setCardForegroundColor(null);
+                    // Vezano za CHANGE CARD HEART COLOR
+                    //Drawable drawable = favoriteButton.getCompoundDrawables()[0].mutate();
+                    if (materialCardView.isChecked()) {
+                        materialCardView.setStrokeWidth(5);
+
+                        /* CHANGE CARD HEART COLOR
+                        drawable.setColorFilter(getResources().getColor(com.google.android.material.R.color.m3_ref_palette_dynamic_primary80), PorterDuff.Mode.SRC_ATOP);
+                        favouriteButton.setCompoundDrawables(drawable, null, null, null);
+                        */
+                    } else {
+                        materialCardView.setStrokeWidth(0);
+
+                        /* Vezano za CHANGE CARD HEART COLOR
+                        drawable.setColorFilter(null);
+                        favoriteButton.setCompoundDrawables(drawable, null, null, null);
+                        */
+                    }
+
+                    Animation animation = AnimationUtils.loadAnimation(view.getContext(), R.anim.like_anim);
+                    favoriteButton.startAnimation(animation);
+                }
+            }
         });
 
         BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNavigation);

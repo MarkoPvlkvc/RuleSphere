@@ -63,4 +63,8 @@
     <color name="md_theme_dark_scrim">#000000</color>
     <color name="md_theme_dark_searchViewInputBackground">#222F35</color>
     <color name="md_theme_light_searchViewInputBackground">#E1ECF2</color>
+
+    <color name="wallpaperColor1">#F44236</color>
+    <color name="wallpaperColor2">#EA1E63</color>
+    <color name="wallpaperColor3">#9C28B1</color>
 </resources>
