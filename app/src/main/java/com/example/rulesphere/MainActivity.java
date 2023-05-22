@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -137,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                     searchView.hide();
                 replaceFragment(new HomeFragment());
             } else if (item.getItemId() == R.id.search) {
+                updateSearchView();
                 searchView.show();
                 updateStatusBarColor();
                 searchView.getToolbar().setLogo(R.drawable.baseline_format_quote_24);
@@ -236,7 +238,6 @@ public class MainActivity extends AppCompatActivity {
                     if (checkedIds.isEmpty())
                         searchViewCategory = "";
 
-                    chip.setChecked(false);
                     chip.setChipBackgroundColor(null);
                 }
 
@@ -282,25 +283,49 @@ public class MainActivity extends AppCompatActivity {
                 List<Quote> quotes;
                 QuoteDao quoteDao = getDb().quoteDao();
 
-//                if (searchViewText.isEmpty() && searchViewCategory.isEmpty())
-//                    quotes = quoteDao.getAll();
-//                else if (!searchViewText.isEmpty() && searchViewCategory.isEmpty())
-//                    quotes = quoteDao.getAllSearch(searchViewText);
-//                else if (searchViewText.isEmpty())
-//                    quotes = quoteDao.getAllCategory(searchViewCategory);
-//                else
-//                    quotes = quoteDao.getAllSearchAndCategory(searchViewText, searchViewCategory);
-
                 quotes = quoteDao.getAllSearchAndCategory2(searchViewText, searchViewCategory);
 
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        CardAdapter adapter = new CardAdapter(quotes);
+                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this);
                         recyclerView.setAdapter(adapter);
                         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     }
                 });
+            }
+        });
+    }
+
+    public void updateMyRulesList(RecyclerView rv) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                List<Quote> quotes;
+                QuoteDao quoteDao = getDb().quoteDao();
+
+                quotes = quoteDao.getFavorites();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this);
+                        rv.setAdapter(adapter);
+                        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    }
+                });
+            }
+        });
+    }
+
+    public void favoriteAQuote(String id) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                QuoteDao quoteDao = getDb().quoteDao();
+                Quote quote = quoteDao.getQuote(id);
+                quote.isFavorite = !quote.isFavorite;
+                quoteDao.insert(quote);
             }
         });
     }

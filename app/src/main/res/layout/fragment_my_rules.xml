@@ -11,33 +11,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chipGroup"
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/myRulesCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:singleLine="true"
             app:singleSelection="true">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/favoritesChip"
-                style="@style/Widget.Material3.Chip.Assist"
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.TonalButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checkable="true"
-                android:text="Favorites" />
+                android:text="Favorites"
+                app:icon="@drawable/baseline_favorite_24" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/myQuotesChip"
-                style="@style/Widget.Material3.Chip.Assist"
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.TonalButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checkable="true"
-                android:text="My Quotes" />
-        </com.google.android.material.chip.ChipGroup>
+                android:text="My Quotes"
+                app:icon="@drawable/baseline_format_quote_24" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_myRules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myRulesCategory"
+            android:paddingBottom="80dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
