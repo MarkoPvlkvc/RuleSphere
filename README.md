@@ -1,2 +1,2 @@
 # RuleSphere
-Mobile application in Android Studio with motivational quotes/rules.
+Material design android application with motivational quotes/rules.
