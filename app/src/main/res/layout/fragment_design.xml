@@ -7,82 +7,273 @@
     tools:context=".DesignFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/wallpaper"
-            style="@style/Widget.Material3.CardView.Outlined"
-            android:layout_width="250dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/design_default_color_error"
-            app:layout_constraintDimensionRatio="9:16"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/wallpaper"
+                style="@style/Widget.Material3.CardView.Outlined"
+                android:layout_width="250dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintDimensionRatio="9:16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="50dp"
+                        android:text="Quote"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:text="Background Color"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wallpaper" />
+
+            <TextView
+                android:id="@+id/wallpaperColorHex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:textSize="15dp"
+                android:alpha="0.5"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/colorPalette"
+                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                app:icon="@drawable/round_color_lens_24"
+                app:layout_constraintEnd_toStartOf="@+id/colorPicker"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/colorPicker"
+                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                app:icon="@drawable/round_colorize_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Color Palette Bottom Sheet -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:visibility="invisible" >
+
+        <FrameLayout
+            android:id="@+id/colorBottomSheet"
+            style="@style/Widget.Material3.BottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+                    android:id="@+id/drag_handle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginBottom="50dp"
-                    android:text="Quote"
-                    android:textSize="20dp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <GridLayout
+                    android:id="@+id/colorBottomSheetGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:columnCount="7"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/drag_handle">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:layout_columnWeight="1"
+                        app:strokeWidth="6dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp" />
+                </GridLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
-            android:text="Background Color"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wallpaper" />
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/wallpaperColor1"
-                style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="@color/wallpaperColor1" />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/wallpaperColor2"
-                style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="@color/wallpaperColor2" />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/wallpaperColor3"
-                style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="@color/wallpaperColor3" />
-        </GridLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </FrameLayout>

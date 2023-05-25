@@ -34,9 +34,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="Author"
-                app:layout_constraintBottom_toBottomOf="@+id/favouriteButton"
+                android:alpha="0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/favoriteButton"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/favouriteButton" />
+                app:layout_constraintTop_toTopOf="@+id/favoriteButton" />
 
             <TextView
                 android:id="@+id/quote"

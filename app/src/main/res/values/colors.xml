@@ -64,7 +64,27 @@
     <color name="md_theme_dark_searchViewInputBackground">#222F35</color>
     <color name="md_theme_light_searchViewInputBackground">#E1ECF2</color>
 
-    <color name="wallpaperColor1">#F44236</color>
-    <color name="wallpaperColor2">#EA1E63</color>
-    <color name="wallpaperColor3">#9C28B1</color>
+    <array name="wallpaperColors">
+        <item>#7b69ad</item>
+        <item>#5099c6</item>
+        <item>#e11862</item>
+        <item>#79db71</item>
+        <item>#642fd5</item>
+        <item>#05489c</item>
+        <item>#31b023</item>
+        <item>#71170a</item>
+        <item>#65eab8</item>
+        <item>#757771</item>
+        <item>#6d4837</item>
+        <item>#62f00b</item>
+        <item>#280135</item>
+        <item>#ffac9b</item>
+        <item>#645869</item>
+        <item>#8828b0</item>
+        <item>#f943aa</item>
+        <item>#ecf78f</item>
+        <item>#d32e0d</item>
+        <item>#FFFFFF</item>
+        <item>#000000</item>
+    </array>
 </resources>

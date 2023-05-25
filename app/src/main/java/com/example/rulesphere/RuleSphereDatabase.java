@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Quote.class}, version = 4)
+@Database(entities = {Quote.class}, version = 5)
 public abstract class RuleSphereDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "quote_database";
