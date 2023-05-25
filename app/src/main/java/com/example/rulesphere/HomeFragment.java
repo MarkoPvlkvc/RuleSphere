@@ -2,21 +2,27 @@ package com.example.rulesphere;
 
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+
+import java.util.Calendar;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,9 +72,8 @@ public class HomeFragment extends Fragment {
     }
 
     MaterialCardView materialCardView;
-    MaterialButton favoriteButton;
-    MaterialButton createQuoteButton;
-    MaterialButton designWallpaperButton;
+    MaterialButton favoriteButton, createQuoteButton, designWallpaperButton;
+    TextView ruleOfDayDay, ruleOfDayQuote, ruleOfDayAuthor;
     ScrollView scrollView;
     View.OnScrollChangeListener scrollViewScrollChange;
     int statusBarDefaultColor, statusBarScrolledColor;
@@ -81,6 +86,9 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         materialCardView = view.findViewById(R.id.ruleCard);
+        ruleOfDayDay = view.findViewById(R.id.ruleOfDayDay);
+        ruleOfDayQuote = view.findViewById(R.id.ruleOfDayQuote);
+        ruleOfDayAuthor = view.findViewById(R.id.ruleOfDayAuthor);
         favoriteButton = view.findViewById(R.id.favoriteButton);
         createQuoteButton = view.findViewById(R.id.createQuoteButton);
         designWallpaperButton = view.findViewById(R.id.designWallpaperButton);
@@ -96,20 +104,48 @@ public class HomeFragment extends Fragment {
             statusBarScrolledColor = getContext().getColor(R.color.md_theme_light_searchViewInputBackground);
         }
 
+        //SET TODAY'S QUOTE
+        Calendar calendar = Calendar.getInstance();
+        int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
+
+        QuoteDao quoteDao = getDb().quoteDao();
+        AtomicReference<Quote> quoteRef = new AtomicReference<>();
+
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                Quote quote = quoteDao.getQuoteAtDay(dayOfYear);
+
+                if (quote == null) {
+                    quote = quoteDao.getRandomQuote();
+
+                    quote.dayUsed = dayOfYear;
+                    quoteDao.insert(quote);
+                }
+
+                ruleOfDayDay.setText(String.valueOf(dayOfYear));
+                ruleOfDayQuote.setText(quote.quote);
+                String author = "- " + quote.author;
+                ruleOfDayAuthor.setText(author);
+
+                if (quote.isFavorite) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            ToggleCard();
+                        }
+                    });
+                }
+            }
+        });
+        //SET TODAY'S QUOTE
+
         materialCardView.setCheckedIcon(null);
         materialCardView.setStrokeWidth(0);
 
         favoriteButton.setOnClickListener(v -> {
-            materialCardView.toggle();
-
-            favoriteButton.setBackground(null);
-            materialCardView.setCardForegroundColor(null);
-
-            if (materialCardView.isChecked()) {
-                materialCardView.setStrokeWidth(5);
-            } else {
-                materialCardView.setStrokeWidth(0);
-            }
+            //Na favorite button se zove .setChecked() iako ne treba
+            ToggleCard();
 
             Animation animation = AnimationUtils.loadAnimation(view.getContext(), R.anim.like_anim);
             favoriteButton.startAnimation(animation);
@@ -128,30 +164,18 @@ public class HomeFragment extends Fragment {
                         isDoubleClick = false;
                     }, DOUBLE_CLICK_DELAY);
                 } else {
-                    materialCardView.toggle();
+                    ToggleCard();
 
-                    favoriteButton.setChecked(materialCardView.isChecked());
-                    favoriteButton.setBackground(null);
+                    AsyncTask.execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            Quote quote = quoteDao.getQuoteAtDay(dayOfYear);
 
-                    // Makne overlay koji je preko teksta kad je isChecked
-                    materialCardView.setCardForegroundColor(null);
-                    // Vezano za CHANGE CARD HEART COLOR
-                    //Drawable drawable = favoriteButton.getCompoundDrawables()[0].mutate();
-                    if (materialCardView.isChecked()) {
-                        materialCardView.setStrokeWidth(5);
+                            MainActivity mainActivity = (MainActivity) getActivity();
+                            mainActivity.favoriteAQuote(quote.id + "");
+                        }
+                    });
 
-                        /* CHANGE CARD HEART COLOR
-                        drawable.setColorFilter(getResources().getColor(com.google.android.material.R.color.m3_ref_palette_dynamic_primary80), PorterDuff.Mode.SRC_ATOP);
-                        favouriteButton.setCompoundDrawables(drawable, null, null, null);
-                        */
-                    } else {
-                        materialCardView.setStrokeWidth(0);
-
-                        /* Vezano za CHANGE CARD HEART COLOR
-                        drawable.setColorFilter(null);
-                        favoriteButton.setCompoundDrawables(drawable, null, null, null);
-                        */
-                    }
 
                     Animation animation = AnimationUtils.loadAnimation(view.getContext(), R.anim.like_anim);
                     favoriteButton.startAnimation(animation);
@@ -205,6 +229,23 @@ public class HomeFragment extends Fragment {
         if (scrollView.getScrollY() != 0) {
             getActivity().getWindow().setStatusBarColor(statusBarScrolledColor);
             getActivity().getWindow().findViewById(R.id.appBarLayout).setBackgroundColor(statusBarScrolledColor);
+        }
+    }
+
+    public RuleSphereDatabase getDb() {
+        return RuleSphereDatabase.getInstance(getContext());
+    }
+
+    public void ToggleCard() {
+        materialCardView.toggle();
+        favoriteButton.setChecked(materialCardView.isChecked());
+
+        if (materialCardView.isChecked()) {
+            materialCardView.setStrokeWidth(5);
+            favoriteButton.setBackground(null);
+            materialCardView.setCardForegroundColor(null);
+        } else {
+            materialCardView.setStrokeWidth(0);
         }
     }
 }

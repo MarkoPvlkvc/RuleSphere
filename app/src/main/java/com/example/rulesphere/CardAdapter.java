@@ -179,6 +179,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(), R.anim.recycler_item_anim);
             viewToAnimate.startAnimation(animation);
             lastPosition = position;
+        } else {
+            viewToAnimate.clearAnimation();
         }
     }
 }

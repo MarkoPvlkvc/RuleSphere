@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/colorWheelImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/color_wheel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/colorWheelPointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:src="@drawable/outline_circle_24"
+        app:layout_constraintBottom_toBottomOf="@+id/colorWheelImage"
+        app:layout_constraintEnd_toEndOf="@+id/colorWheelImage"
+        app:layout_constraintStart_toStartOf="@+id/colorWheelImage"
+        app:layout_constraintTop_toTopOf="@+id/colorWheelImage" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/currentColorColorWheel"
+        style="@style/Widget.Material3.Button.IconButton.Outlined"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorWheelImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,4 +21,7 @@ public class Quote {
     public boolean isPersonal = false;
     @ColumnInfo(name = "ADMIN_PICKED")
     public boolean isAdminPicked = false;
+
+    @ColumnInfo(name = "DAY_USED")
+    public int dayUsed;
 }

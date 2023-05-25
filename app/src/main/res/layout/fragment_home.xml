@@ -72,12 +72,12 @@
                         android:layout_marginStart="5dp"
                         android:text="Rule nr."
                         android:alpha="0.8"
-                        app:layout_constraintBottom_toBottomOf="@+id/favouriteButton"
+                        app:layout_constraintBottom_toBottomOf="@+id/favoriteButton"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/favouriteButton" />
+                        app:layout_constraintTop_toTopOf="@+id/favoriteButton" />
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/ruleOfDayDay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -90,6 +90,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/ruleOfDayQuote"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -102,7 +103,19 @@
                         android:paddingRight="16dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                        app:layout_constraintTop_toBottomOf="@+id/ruleOfDayDay" />
+
+                    <TextView
+                        android:id="@+id/ruleOfDayAuthor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:alpha="0.5"
+                        android:text="- Nitin Namdeo"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ruleOfDayQuote" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/favoriteButton"
