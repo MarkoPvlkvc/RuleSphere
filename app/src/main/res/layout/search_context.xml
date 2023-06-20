@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/searchContext"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="20dp">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:background="@android:color/black" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/ruleCard"
         style="@style/Widget.Material3.CardView.Elevated"
+        app:cardBackgroundColor="?attr/cardBackgroundColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        tools:layout_editor_absoluteX="20dp">
+        app:layout_constraintVertical_bias="0.41000003"
+        app:rippleColor="@android:color/transparent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="16dp"
             android:paddingLeft="16dp"
+            android:paddingTop="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="50dp">
 
@@ -33,25 +46,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
+                android:alpha="0.8"
                 android:text="Author"
-                android:alpha="0.5"
                 app:layout_constraintBottom_toBottomOf="@+id/favoriteButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/favoriteButton" />
 
+            <!-- android:textColor="?android:attr/textColorSecondary" -->
             <TextView
                 android:id="@+id/quote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
                 android:text="This is the journey of your life. Don’t try to explain it to others, because only you can see it."
                 android:textAlignment="center"
                 android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="20dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/author" />
@@ -62,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
+                android:enabled="false"
                 app:icon="@drawable/favorite"
                 app:iconSize="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -74,10 +88,42 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="x"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/quote"
-                android:visibility="gone"/>
+                app:layout_constraintTop_toBottomOf="@+id/quote" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/useQuoteContext"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Use Rule in Design"
+        app:icon="@drawable/baseline_create_24"
+        app:layout_constraintStart_toStartOf="@+id/ruleCard"
+        app:layout_constraintTop_toBottomOf="@+id/ruleCard" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/copyQuoteContext"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Copy Rule"
+        app:icon="@drawable/baseline_content_copy_24"
+        app:layout_constraintStart_toStartOf="@+id/ruleCard"
+        app:layout_constraintTop_toBottomOf="@+id/useQuoteContext" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveQuoteContext"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Rule"
+        app:icon="@drawable/round_download_24"
+        app:layout_constraintStart_toStartOf="@+id/ruleCard"
+        app:layout_constraintTop_toBottomOf="@+id/copyQuoteContext" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

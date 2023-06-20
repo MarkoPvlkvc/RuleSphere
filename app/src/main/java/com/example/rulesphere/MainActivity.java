@@ -8,8 +8,13 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.FrameLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -129,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new HomeFragment());
         activeFragment = "home";
 
+        searchView.getToolbar().setNavigationOnClickListener(v -> {
+            onBackPressed();
+        });
+
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.home) {
                 if (Objects.equals(activeFragment, "home") && !searchView.isShowing())
@@ -141,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 updateSearchView();
                 searchView.show();
                 updateStatusBarColor();
-                searchView.getToolbar().setLogo(R.drawable.baseline_format_quote_24);
+                //searchView.getToolbar().setLogo(R.drawable.baseline_format_quote_24);
             } else if (item.getItemId() == R.id.design) {
                 if (Objects.equals(activeFragment, "design") && !searchView.isShowing())
                     return true;
@@ -256,8 +265,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (searchView.isShowing()) {
-            searchView.hide();
+        if (searchView.isShowing() || findViewById(R.id.closeSearchView) != null) {
+            View searchContext = findViewById(R.id.searchContext);
+            if (searchContext != null) {
+                searchContext.findViewById(R.id.imageView).performClick();
+                return;
+            }
+
+            //searchView.hide();
+            hideSearchView();
 
             if (Objects.equals(activeFragment, "home"))
                 binding.bottomNavigation.setSelectedItemId(R.id.home);
@@ -288,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this);
+                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this, R.id.recycler_view_search);
                         recyclerView.setAdapter(adapter);
                         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     }
@@ -309,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this);
+                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this, R.id.recycler_view_myRules);
                         rv.setAdapter(adapter);
                         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     }
@@ -357,5 +373,88 @@ public class MainActivity extends AppCompatActivity {
         });
 
         colorAnimation.start();
+    }
+
+    public void updateSearchView2(RecyclerView rv) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                List<Quote> quotes;
+                QuoteDao quoteDao = getDb().quoteDao();
+
+                quotes = quoteDao.getAllSearchAndCategory2(null, null);
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this, rv.getId());
+                        rv.setAdapter(adapter);
+                        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    }
+                });
+            }
+        });
+    }
+
+    //Na kraju implementacije zamijenit addView i removeView tako da na pocetku adda u onCreate
+    //i onda samo sakriva i pokazuje kada je potrebno
+    //maknut sve funkcije (listenere) i to gore kada se sada jednom treba kreirat
+    public void showSearchView() {
+        View searchView = LayoutInflater.from(this).inflate(R.layout.search_view, null);
+        searchView.setClickable(true);
+
+        FrameLayout searchViewFrameLayout = findViewById(R.id.searchViewFrameLayout);
+        searchViewFrameLayout.addView(searchView);
+
+        RecyclerView rv = searchView.findViewById(R.id.recycler_view_search);
+        updateSearchView2(rv);
+
+        searchView.findViewById(R.id.closeSearchView).setOnClickListener(v2 -> {
+            hideSearchView();
+        });
+
+        FloatingActionButton goToTopFab = searchView.findViewById(R.id.fab_goToTop);
+
+        goToTopFab.setOnClickListener(v2 -> {
+            final float MILLISECONDS_PER_INCH = 5f;
+            LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(rv.getContext()) {
+                @Override
+                protected float calculateSpeedPerPixel(DisplayMetrics displayMetrics) {
+                    return MILLISECONDS_PER_INCH / displayMetrics.densityDpi;
+                }
+            };
+
+            linearSmoothScroller.setTargetPosition(0);
+            rv.getLayoutManager().startSmoothScroll(linearSmoothScroller);
+        });
+
+        rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                if (dy < 0) {
+                    goToTopFab.show();
+                } else {
+                    goToTopFab.hide();
+                }
+            }
+
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+                if (newState == RecyclerView.SCROLL_STATE_IDLE && recyclerView.computeVerticalScrollOffset() == 0) {
+                    goToTopFab.hide();
+                }
+            }
+        });
+    }
+
+    public void hideSearchView() {
+        FrameLayout searchViewFrameLayout = findViewById(R.id.searchViewFrameLayout);
+        View searchView = searchViewFrameLayout.getChildAt(0); // Get the first child view (searchView)
+
+        searchViewFrameLayout.removeView(searchView);
     }
 }

@@ -1,27 +1,51 @@
 package com.example.rulesphere;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.os.Environment;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -72,12 +96,15 @@ public class HomeFragment extends Fragment {
     }
 
     MaterialCardView materialCardView;
-    MaterialButton favoriteButton, createQuoteButton, designWallpaperButton;
+    MaterialButton favoriteButton, createQuoteButton, designWallpaperButton,
+    copyQuoteButton, saveQuoteButton;
     TextView ruleOfDayDay, ruleOfDayQuote, ruleOfDayAuthor;
     ScrollView scrollView;
     View.OnScrollChangeListener scrollViewScrollChange;
     int statusBarDefaultColor, statusBarScrolledColor;
     boolean isNightMode;
+    FrameLayout shareBottomSheet;
+    ExtendedFloatingActionButton shareFAB;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -95,6 +122,17 @@ public class HomeFragment extends Fragment {
         scrollView = view.findViewById(R.id.homeScrolLView);
 
         isNightMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+
+        copyQuoteButton = view.findViewById(R.id.copyQuote);
+        saveQuoteButton = view.findViewById(R.id.saveQuote);
+        shareFAB = view.findViewById(R.id.extended_fab_share);
+
+        shareBottomSheet = view.findViewById(R.id.shareBottomSheet);
+        if (shareBottomSheet.getParent() != null) {
+            ((ViewGroup) shareBottomSheet.getParent()).removeView(shareBottomSheet);
+        }
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
+        bottomSheetDialog.setContentView(shareBottomSheet);
 
         if (isNightMode) {
             statusBarDefaultColor = getContext().getColor(R.color.md_theme_dark_background);
@@ -188,6 +226,9 @@ public class HomeFragment extends Fragment {
         createQuoteButton.setOnClickListener(v -> {
             if (createQuoteButton.isChecked()) {
                 createQuoteButton.setChecked(false);
+
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.showSearchView();
             }
         });
 
@@ -213,6 +254,30 @@ public class HomeFragment extends Fragment {
 
         scrollView.setOnScrollChangeListener(scrollViewScrollChange);
 
+        shareFAB.setOnClickListener(v -> {
+            bottomSheetDialog.show();
+        });
+
+        copyQuoteButton.setOnClickListener(v -> {
+            String text = "Rule nr. " + ruleOfDayDay.getText() + "\n" +
+                    ruleOfDayQuote.getText() + "\n" +
+                    ruleOfDayAuthor.getText();
+
+            ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("label", text);
+            clipboard.setPrimaryClip(clip);
+
+            Toast.makeText(getContext(), "Rule copied to clipboard", Toast.LENGTH_SHORT).show();
+
+            bottomSheetDialog.hide();
+        });
+
+        saveQuoteButton.setOnClickListener(v -> {
+            saveViewToJpeg(view.findViewById(R.id.ruleCard));
+
+            bottomSheetDialog.hide();
+        });
+
         return view;
     }
 
@@ -236,7 +301,7 @@ public class HomeFragment extends Fragment {
         return RuleSphereDatabase.getInstance(getContext());
     }
 
-    public void ToggleCard() {
+    private void ToggleCard() {
         materialCardView.toggle();
         favoriteButton.setChecked(materialCardView.isChecked());
 
@@ -246,6 +311,50 @@ public class HomeFragment extends Fragment {
             materialCardView.setCardForegroundColor(null);
         } else {
             materialCardView.setStrokeWidth(0);
+        }
+    }
+
+    private void saveViewToJpeg(View view) {
+        // Create a Bitmap with the same dimensions as the view
+        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+
+        // Create a Canvas and associate it with the Bitmap
+        Canvas canvas = new Canvas(bitmap);
+
+        // Draw the view onto the Canvas
+        view.draw(canvas);
+
+        // Generate a unique filename
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        String fileName = "rule_nr_" + ruleOfDayDay.getText() + "_" + year + ".png";
+
+        // Get the content resolver
+        ContentResolver resolver = getContext().getContentResolver();
+
+        // Create the content values for the image
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, fileName);
+        contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/png");
+
+        // Insert the image into MediaStore and get the URI
+        Uri imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+
+        try {
+            // Open an output stream using the URI
+            OutputStream outputStream = resolver.openOutputStream(imageUri);
+
+            if (outputStream != null) {
+                // Compress the bitmap as JPEG with quality 100 and write it to the output stream
+                bitmap.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
+
+                // Close the output stream
+                outputStream.close();
+
+                Toast.makeText(getContext(), "Rule saved", Toast.LENGTH_SHORT).show();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

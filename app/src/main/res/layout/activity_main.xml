@@ -67,8 +67,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="@string/searchbar_hint"
-        app:hideNavigationIcon="true"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:autoShowKeyboard="false"
+        app:layout_constraintTop_toTopOf="parent">
         <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -153,7 +153,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/categoryScrollView" />
+                app:layout_constraintTop_toBottomOf="@+id/categoryScrollView"
+                android:scrollbars="vertical"/>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/extended_fab_go_to_top"
@@ -162,7 +163,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:contentDescription="Go to top"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/round_arrow_upward_24" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -177,5 +178,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+    <FrameLayout
+        android:id="@+id/searchViewFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="3dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
