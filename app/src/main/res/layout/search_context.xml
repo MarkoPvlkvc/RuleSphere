@@ -17,7 +17,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/ruleCard"
         style="@style/Widget.Material3.CardView.Elevated"
-        app:cardBackgroundColor="?attr/cardBackgroundColor"
+        app:cardBackgroundColor="?attr/colorPrimaryContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -48,6 +48,8 @@
                 android:layout_marginStart="5dp"
                 android:alpha="0.8"
                 android:text="Author"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="?attr/colorOnPrimaryContainer"
                 app:layout_constraintBottom_toBottomOf="@+id/favoriteButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/favoriteButton" />
@@ -64,7 +66,9 @@
                 android:text="This is the journey of your life. Don’t try to explain it to others, because only you can see it."
                 android:textAlignment="center"
                 android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:textSize="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="21dp"
+                android:textColor="?attr/colorOnPrimaryContainer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/author" />

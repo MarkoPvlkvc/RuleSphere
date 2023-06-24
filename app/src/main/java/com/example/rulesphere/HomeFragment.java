@@ -5,6 +5,7 @@ import android.content.ClipboardManager;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -136,10 +137,16 @@ public class HomeFragment extends Fragment {
 
         if (isNightMode) {
             statusBarDefaultColor = getContext().getColor(R.color.md_theme_dark_background);
-            statusBarScrolledColor = getContext().getColor(R.color.md_theme_dark_searchViewInputBackground);
+            statusBarScrolledColor = getContext().getColor(R.color.md_theme_dark_scrolled);
+
+            designWallpaperButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_dark_scrolled)));
+            createQuoteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_dark_scrolled)));
         } else {
             statusBarDefaultColor = getContext().getColor(R.color.md_theme_light_background);
-            statusBarScrolledColor = getContext().getColor(R.color.md_theme_light_searchViewInputBackground);
+            statusBarScrolledColor = getContext().getColor(R.color.md_theme_light_scrolled);
+
+            designWallpaperButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_scrolled)));
+            createQuoteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_scrolled)));
         }
 
         //SET TODAY'S QUOTE

@@ -97,7 +97,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         ConstraintLayout constraintLayout = (ConstraintLayout) holder.materialCardView.getParent();
         int padding;
         if (position == getItemCount() - 1) {
-            padding = (int) Math.floor(100 * mainActivity.getResources().getDisplayMetrics().density);
+            padding = (int) Math.floor(120 * mainActivity.getResources().getDisplayMetrics().density);
         } else {
             padding = (int) Math.floor(20 * mainActivity.getResources().getDisplayMetrics().density);
         }

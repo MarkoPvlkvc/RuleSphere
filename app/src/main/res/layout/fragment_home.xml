@@ -45,7 +45,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/ruleCard"
                 style="?attr/materialCardViewOutlinedStyle"
-                app:cardBackgroundColor="?attr/cardBackgroundColor"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -73,6 +73,8 @@
                         android:layout_marginStart="5dp"
                         android:text="Rule nr."
                         android:alpha="0.8"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="?attr/colorOnPrimaryContainer"
                         app:layout_constraintBottom_toBottomOf="@+id/favoriteButton"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/favoriteButton" />
@@ -86,6 +88,8 @@
                         android:text="125"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textSize="25dp"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        android:fontFamily="@font/roboto_bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -95,13 +99,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:text="This is the journey of your life. Don’t try to explain it to others, because only you can see it."
                         android:textAlignment="center"
                         android:textAppearance="?attr/textAppearanceBodyLarge"
-                        android:textSize="25dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
+                        android:textSize="21dp"
+                        android:textColor="?attr/colorOnPrimaryContainer"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/ruleOfDayDay" />
@@ -113,6 +119,8 @@
                         android:layout_marginTop="10dp"
                         android:alpha="0.5"
                         android:text="- Nitin Namdeo"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="?attr/colorOnPrimaryContainer"
                         android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -145,43 +153,43 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@+id/textView4"
                 android:layout_margin="20dp"
+                android:layout_marginTop="5dp"
+                android:columnCount="2"
                 android:paddingBottom="100dp"
-                android:columnCount="2">
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/createQuoteButton"
-                    style="?attr/materialIconButtonFilledStyle"
-                    app:cornerRadius="12dp"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
                     android:layout_width="0dp"
-                    android:layout_columnWeight="1"
                     android:layout_height="0dp"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
                     android:layout_marginEnd="5dp"
                     android:checkable="true"
                     android:clickable="true"
-                    app:icon="@drawable/baseline_format_quote_24"
-                    app:iconGravity="top"
                     android:focusable="true"
-                    android:text="Write your own quote." />
+                    android:text="Write your own quote"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/baseline_format_quote_24"
+                    app:iconGravity="top" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/designWallpaperButton"
-                    style="?attr/materialIconButtonFilledStyle"
-                    app:cornerRadius="12dp"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
                     android:layout_width="0dp"
-                    android:layout_columnWeight="1"
                     android:layout_height="match_parent"
+                    android:layout_columnWeight="1"
                     android:layout_marginStart="5dp"
                     android:checkable="true"
                     android:clickable="true"
-                    app:icon="@drawable/baseline_create_24"
-                    app:iconGravity="top"
                     android:focusable="true"
-                    android:text="Design your own wallpaper." />
+                    android:text="Design your own wallpaper"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/baseline_create_24"
+                    app:iconGravity="top" />
             </GridLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -273,6 +281,8 @@
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/extended_fab_share"
+        style="@style/Widget.Material3.ExtendedFloatingActionButton.Primary"
+        android:shadowColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
