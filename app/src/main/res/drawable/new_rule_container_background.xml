@@ -4,5 +4,5 @@
         android:color="?attr/colorSurfaceVariant" />
 
     <corners
-        android:radius="360dp" />
+        android:radius="12dp" />
 </shape>
