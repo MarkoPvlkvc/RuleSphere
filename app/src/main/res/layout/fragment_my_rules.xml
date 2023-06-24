@@ -22,14 +22,18 @@
             app:singleSelection="true">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/myRulesFavorites"
                 style="@style/Widget.Material3.Button.TonalButton"
+                android:backgroundTint="?attr/colorSurfaceVariant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Favorites"
                 app:icon="@drawable/baseline_favorite_24" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/myRulesQuotes"
                 style="@style/Widget.Material3.Button.TonalButton"
+                android:backgroundTint="?attr/colorSurfaceVariant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="My Quotes"
@@ -40,11 +44,23 @@
             android:id="@+id/recycler_view_myRules"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myRulesCategory" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_addQuote"
+            style="@style/Widget.Material3.FloatingActionButton.Large.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Add Quote"
+            android:layout_margin="16dp"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/myRulesCategory"
-            android:scrollbars="vertical"/>
+            app:srcCompat="@drawable/round_add_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

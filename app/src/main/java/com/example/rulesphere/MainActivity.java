@@ -15,6 +15,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -47,6 +48,7 @@ import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.search.SearchView;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.transition.MaterialFadeThrough;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,6 +57,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -73,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
             famousPeopleChip, sportChip, musicChip;
     int statusBarDefaultColor, statusBarScrolledColor;
     boolean isNightMode;
-    FrameLayout filterBottomSheetView;
-    BottomSheetDialog filterBottomSheetDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,15 +147,6 @@ public class MainActivity extends AppCompatActivity {
             statusBarScrolledColor = getApplicationContext().getColor(R.color.md_theme_light_searchViewInputBackground);
         }
         // INITIALIZATION
-
-        // BOTTOM SHEETS
-        filterBottomSheetView = findViewById(R.id.filterBottomSheet);
-        if (filterBottomSheetView.getParent() != null) {
-            ((ViewGroup) filterBottomSheetView.getParent()).removeView(filterBottomSheetView);
-        }
-        filterBottomSheetDialog = new BottomSheetDialog(MainActivity.this);
-        filterBottomSheetDialog.setContentView(filterBottomSheetView);
-        // BOTTOM SHEETS
 
         replaceFragment(new HomeFragment());
         activeFragment = "home";
@@ -268,9 +260,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void replaceFragment(Fragment fragment) {
+        MaterialFadeThrough enterTransition = new MaterialFadeThrough();
+        enterTransition.setSecondaryAnimatorProvider(null);
+        fragment.setEnterTransition(enterTransition);
+
         getSupportFragmentManager()
                 .beginTransaction()
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .replace(R.id.frameLayout, fragment)
                 .commit();
     }
@@ -346,6 +341,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void updateMyQuotesList(RecyclerView rv) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                List<Quote> quotes;
+                QuoteDao quoteDao = getDb().quoteDao();
+
+                quotes = quoteDao.getPersonal();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this, R.id.recycler_view_myRules);
+                        rv.setAdapter(adapter);
+                        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    }
+                });
+            }
+        });
+    }
+
     public void favoriteAQuote(String id) {
         AsyncTask.execute(new Runnable() {
             @Override
@@ -394,14 +410,14 @@ public class MainActivity extends AppCompatActivity {
                 List<Quote> quotes;
                 QuoteDao quoteDao = getDb().quoteDao();
 
-                quotes = quoteDao.getAllSearchAndCategory2(searchViewText, null);
+                quotes = quoteDao.getAllSearchAndCategory2(searchViewText, searchViewCategory);
 
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         CardAdapter adapter = new CardAdapter(quotes, MainActivity.this, rv.getId());
                         rv.setAdapter(adapter);
-                        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                        rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                     }
                 });
             }
@@ -413,23 +429,9 @@ public class MainActivity extends AppCompatActivity {
     //maknut sve funkcije (listenere) i to gore kada se sada jednom treba kreirat
     public void showSearchView() {
         View searchView = LayoutInflater.from(this).inflate(R.layout.search_view, null);
-        searchView.setClickable(true);
-
         FrameLayout searchViewFrameLayout = findViewById(R.id.searchViewFrameLayout);
-
         // Set the initial translationX value to the width of the FrameLayout
         searchView.setTranslationY(searchViewFrameLayout.getHeight());
-
-        ImageView searchViewInputBackground = searchView.findViewById(R.id.searchViewInputBackground);
-        MaterialButton filterSearchViewButton = searchView.findViewById(R.id.filterSearchView);
-        if (isNightMode) {
-            searchViewInputBackground.setBackgroundTintList(ColorStateList.valueOf(getApplicationContext().getColor(R.color.md_theme_dark_scrolled)));
-            filterSearchViewButton.setBackgroundTintList(ColorStateList.valueOf(getApplicationContext().getColor(R.color.md_theme_dark_scrolled)));
-        } else {
-            searchViewInputBackground.setBackgroundTintList(ColorStateList.valueOf(getApplicationContext().getColor(R.color.md_theme_light_scrolled)));
-            filterSearchViewButton.setBackgroundTintList(ColorStateList.valueOf(getApplicationContext().getColor(R.color.md_theme_light_scrolled)));
-        }
-
         searchViewFrameLayout.addView(searchView);
 
         RecyclerView rv = searchView.findViewById(R.id.recycler_view_search);
@@ -469,6 +471,58 @@ public class MainActivity extends AppCompatActivity {
         });
         animator.start();
 
+        // BOTTOM SHEET
+        FrameLayout filterBottomSheetView = findViewById(R.id.filterBottomSheet);
+        ChipGroup filterBottomSheetChipGroup = findViewById(R.id.filterChipGroup);
+        if (filterBottomSheetView.getParent() != null) {
+            ((ViewGroup) filterBottomSheetView.getParent()).removeView(filterBottomSheetView);
+        }
+        BottomSheetDialog filterBottomSheetDialog = new BottomSheetDialog(MainActivity.this);
+        filterBottomSheetDialog.setContentView(filterBottomSheetView);
+
+        MaterialButton.OnCheckedChangeListener filterOnChecked = new MaterialButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(MaterialButton button, boolean isChecked) {
+                if (isChecked) {
+                    button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(MainActivity.this, com.google.android.material.R.attr.colorPrimaryContainer)));
+                } else {
+                    button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(MainActivity.this, com.google.android.material.R.attr.colorSurfaceVariant)));
+                }
+            }
+        };
+
+        View.OnClickListener filterOnClick = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChipGroup chipGroup = (ChipGroup) v.getParent();
+                boolean somethingChecked = false;
+                for (int i = 0; i < chipGroup.getChildCount(); i++) {
+                    MaterialButton materialButton = (MaterialButton) filterBottomSheetChipGroup.getChildAt(i);
+
+                    if (materialButton == v && materialButton.isChecked()) {
+                        searchViewCategory = (String) materialButton.getText();
+                        somethingChecked = true;
+                        continue;
+                    }
+
+                    materialButton.setChecked(false);
+                }
+
+                if (!somethingChecked) {
+                    searchViewCategory = "";
+                }
+
+                updateSearchView2(rv);
+            }
+        };
+
+        for (int i = 0; i < filterBottomSheetChipGroup.getChildCount(); i++) {
+            MaterialButton materialButton = (MaterialButton) filterBottomSheetChipGroup.getChildAt(i);
+            materialButton.addOnCheckedChangeListener(filterOnChecked);
+            materialButton.setOnClickListener(filterOnClick);
+        }
+        // BOTTOM SHEET
+
         searchView.findViewById(R.id.closeSearchView).setOnClickListener(v2 -> {
             View view = this.getCurrentFocus();
             if (view != null) {
@@ -486,7 +540,8 @@ public class MainActivity extends AppCompatActivity {
             }, 10);
         });
 
-        searchView.findViewById(R.id.filterSearchView).setOnClickListener(v2 -> {
+        MaterialButton filterSearchViewButton = searchView.findViewById(R.id.filterSearchView);
+        filterSearchViewButton.setOnClickListener(v2 -> {
             filterBottomSheetDialog.show();
         });
 
@@ -596,5 +651,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         colorAnimator.start();
+    }
+
+    public int getColorFromResource(Context context, int resource) {
+        TypedValue typedValue = new TypedValue();
+        int colorSurfaceVariant = 0;
+
+        // Resolve the attribute value
+        boolean resolved = context.getTheme().resolveAttribute(resource, typedValue, true);
+
+        if (resolved && typedValue.type >= TypedValue.TYPE_FIRST_COLOR_INT && typedValue.type <= TypedValue.TYPE_LAST_COLOR_INT) {
+            // Attribute value is a color
+            colorSurfaceVariant = typedValue.data;
+        }
+
+        return colorSurfaceVariant;
     }
 }

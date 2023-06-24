@@ -1,5 +1,10 @@
 package com.example.rulesphere;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
@@ -13,14 +18,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.FrameLayout;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -74,12 +84,14 @@ public class MyRulesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_my_rules, container, false);
-
         MainActivity mainActivity = (MainActivity) getActivity();
+
+        MaterialButton myRulesFavorites = view.findViewById(R.id.myRulesFavorites);
+        MaterialButton myRulesQuotes = view.findViewById(R.id.myRulesQuotes);
+
         RecyclerView rv = view.findViewById(R.id.recycler_view_myRules);
-        mainActivity.updateMyRulesList(rv);
+        FloatingActionButton addQuoteFab = view.findViewById(R.id.fab_addQuote);
 
         boolean isNightMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
         MaterialButtonToggleGroup materialButtonToggleGroup = view.findViewById(R.id.myRulesCategory);
@@ -87,30 +99,60 @@ public class MyRulesFragment extends Fragment {
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
             public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
-                for (int i = 0; i < materialButtonToggleGroup.getChildCount(); i++) {
-                    MaterialButton materialButton = (MaterialButton) materialButtonToggleGroup.getChildAt(i);
+                if (!isChecked) {
+                    // Button was unchecked, do nothing
+                    return;
+                }
 
-                    if (materialButtonToggleGroup.getCheckedButtonId() == materialButton.getId()) {
-                        if (isNightMode) {
-                            materialButton.setBackgroundColor(getContext().getColor(R.color.md_theme_light_primary));
+                for (int i = 0; i < group.getChildCount(); i++) {
+                    MaterialButton materialButton = (MaterialButton) group.getChildAt(i);
+
+                    if (checkedId == materialButton.getId()) {
+                        materialButton.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorPrimaryContainer)));
+
+                        if (checkedId == myRulesFavorites.getId()) {
+                            mainActivity.updateMyRulesList(rv);
+                            addQuoteFab.hide();
                         } else {
-                            materialButton.setBackgroundColor(getContext().getColor(com.google.android.material.R.color.material_dynamic_primary80));
+                            mainActivity.updateMyQuotesList(rv);
+                            addQuoteFab.show();
                         }
 
                         continue;
                     }
 
-                    if (isNightMode) {
-                        materialButton.setBackgroundColor(getContext().getColor(R.color.md_theme_dark_secondaryContainer));
-                    } else {
-                        materialButton.setBackgroundColor(getContext().getColor(R.color.md_theme_light_secondaryContainer));
-                    }
+                    materialButton.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorSurfaceVariant)));
                 }
             }
         });
 
-        materialButtonToggleGroup.check(materialButtonToggleGroup.getChildAt(0).getId());
+        addQuoteFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View addRuleView = inflater.inflate(R.layout.add_rule_view, container, false);
+                FrameLayout addRuleFrameLayout = getActivity().findViewById(R.id.addRuleFrameLayout);
+
+                addRuleFrameLayout.addView(addRuleView);
+            }
+        });
+
+        materialButtonToggleGroup.check(myRulesFavorites.getId());
 
         return view;
+    }
+
+    public int getColorFromResource(Context context, int resource) {
+        TypedValue typedValue = new TypedValue();
+        int colorSurfaceVariant = 0;
+
+        // Resolve the attribute value
+        boolean resolved = context.getTheme().resolveAttribute(resource, typedValue, true);
+
+        if (resolved && typedValue.type >= TypedValue.TYPE_FIRST_COLOR_INT && typedValue.type <= TypedValue.TYPE_LAST_COLOR_INT) {
+            // Attribute value is a color
+            colorSurfaceVariant = typedValue.data;
+        }
+
+        return colorSurfaceVariant;
     }
 }
