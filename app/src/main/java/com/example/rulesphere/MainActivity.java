@@ -1,10 +1,18 @@
 package com.example.rulesphere;
 
+import android.animation.Animator;
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -13,8 +21,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,11 +40,13 @@ import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rulesphere.databinding.ActivityMainBinding;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.search.SearchView;
+import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
             famousPeopleChip, sportChip, musicChip;
     int statusBarDefaultColor, statusBarScrolledColor;
     boolean isNightMode;
+    FrameLayout filterBottomSheetView;
+    BottomSheetDialog filterBottomSheetDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,6 +147,15 @@ public class MainActivity extends AppCompatActivity {
         }
         // INITIALIZATION
 
+        // BOTTOM SHEETS
+        filterBottomSheetView = findViewById(R.id.filterBottomSheet);
+        if (filterBottomSheetView.getParent() != null) {
+            ((ViewGroup) filterBottomSheetView.getParent()).removeView(filterBottomSheetView);
+        }
+        filterBottomSheetDialog = new BottomSheetDialog(MainActivity.this);
+        filterBottomSheetDialog.setContentView(filterBottomSheetView);
+        // BOTTOM SHEETS
+
         replaceFragment(new HomeFragment());
         activeFragment = "home";
 
@@ -168,19 +193,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
-
-        /*
-        searchBackButton.setOnClickListener(v -> {
-            // Closes soft keyboard
-            View view = this.getCurrentFocus();
-            if (view != null) {
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-            }
-            // Closes soft keyboard
-
-            onBackPressed();
-        });*/
 
         goToTopButton.setOnClickListener(v -> {
             final float MILLISECONDS_PER_INCH = 5f;
@@ -272,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            //searchView.hide();
+            searchView.hide();
             hideSearchView();
 
             if (Objects.equals(activeFragment, "home"))
@@ -282,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
             else if (Objects.equals(activeFragment, "myRules"))
                 binding.bottomNavigation.setSelectedItemId(R.id.myRules);
 
-            updateStatusBarColor();
+            //updateStatusBarColor();
         } else {
             super.onBackPressed();
         }
@@ -382,7 +394,7 @@ public class MainActivity extends AppCompatActivity {
                 List<Quote> quotes;
                 QuoteDao quoteDao = getDb().quoteDao();
 
-                quotes = quoteDao.getAllSearchAndCategory2(null, null);
+                quotes = quoteDao.getAllSearchAndCategory2(searchViewText, null);
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -404,13 +416,105 @@ public class MainActivity extends AppCompatActivity {
         searchView.setClickable(true);
 
         FrameLayout searchViewFrameLayout = findViewById(R.id.searchViewFrameLayout);
+
+        // Set the initial translationX value to the width of the FrameLayout
+        searchView.setTranslationY(searchViewFrameLayout.getHeight());
+
+        ImageView searchViewInputBackground = searchView.findViewById(R.id.searchViewInputBackground);
+        MaterialButton filterSearchViewButton = searchView.findViewById(R.id.filterSearchView);
+        if (isNightMode) {
+            searchViewInputBackground.setBackgroundTintList(ColorStateList.valueOf(getApplicationContext().getColor(R.color.md_theme_dark_scrolled)));
+            filterSearchViewButton.setBackgroundTintList(ColorStateList.valueOf(getApplicationContext().getColor(R.color.md_theme_dark_scrolled)));
+        } else {
+            searchViewInputBackground.setBackgroundTintList(ColorStateList.valueOf(getApplicationContext().getColor(R.color.md_theme_light_scrolled)));
+            filterSearchViewButton.setBackgroundTintList(ColorStateList.valueOf(getApplicationContext().getColor(R.color.md_theme_light_scrolled)));
+        }
+
         searchViewFrameLayout.addView(searchView);
 
         RecyclerView rv = searchView.findViewById(R.id.recycler_view_search);
         updateSearchView2(rv);
 
+        // Animate the translationY property to 0
+        ObjectAnimator animator = ObjectAnimator.ofFloat(searchView, "translationY", 0);
+        animator.setDuration(300);
+        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(@NonNull Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(@NonNull Animator animator) {
+                int endColor;
+                if (isNightMode) {
+                    endColor = getApplicationContext().getColor(R.color.md_theme_dark_background);
+                } else {
+                    endColor = getApplicationContext().getColor(R.color.md_theme_light_background);
+                }
+
+                getWindow().setStatusBarColor(endColor);
+            }
+
+            @Override
+            public void onAnimationCancel(@NonNull Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(@NonNull Animator animator) {
+
+            }
+        });
+        animator.start();
+
         searchView.findViewById(R.id.closeSearchView).setOnClickListener(v2 -> {
-            hideSearchView();
+            View view = this.getCurrentFocus();
+            if (view != null) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+
+            // Daje vremena tipkovnici da se zatvori da bi search view zauzimao cijeli ekran
+            // da mu animacija ne bi prekinula na pola ekrana prema dolje
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    hideSearchView();
+                }
+            }, 10);
+        });
+
+        searchView.findViewById(R.id.filterSearchView).setOnClickListener(v2 -> {
+            filterBottomSheetDialog.show();
+        });
+
+        TextInputEditText searchViewInput = searchView.findViewById(R.id.searchViewInput);
+        searchViewInput.addTextChangedListener(new TextWatcher() {
+            private Handler handler = new Handler();
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                handler.removeCallbacksAndMessages(null);
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        searchViewText = editable.toString();
+                        updateSearchView2(rv);
+                    }
+                }, 500);
+            }
         });
 
         FloatingActionButton goToTopFab = searchView.findViewById(R.id.fab_goToTop);
@@ -455,6 +559,42 @@ public class MainActivity extends AppCompatActivity {
         FrameLayout searchViewFrameLayout = findViewById(R.id.searchViewFrameLayout);
         View searchView = searchViewFrameLayout.getChildAt(0); // Get the first child view (searchView)
 
-        searchViewFrameLayout.removeView(searchView);
+        ScrollView homeScrollView = findViewById(R.id.homeScrolLView);
+        if (homeScrollView != null) {
+            homeScrollView.setScrollY(0);
+        }
+
+        // Animate the translationY property to 100%
+        ObjectAnimator animator = ObjectAnimator.ofFloat(searchView, "translationY", searchViewFrameLayout.getHeight());
+        animator.setDuration(300);
+        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        animator.start();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                searchViewFrameLayout.removeView(searchView);
+                searchViewText = null;
+            }
+        }, 300);
+    }
+
+    private void animateStatusBarColor(final int endColor) {
+        final Window window = getWindow();
+        final int animationDuration = 300;
+        final int startColor = window.getStatusBarColor();
+
+        ValueAnimator colorAnimator = ValueAnimator.ofObject(new ArgbEvaluator(), startColor, endColor);
+        colorAnimator.setDuration(animationDuration);
+
+        colorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animator) {
+                int animatedValue = (int) animator.getAnimatedValue();
+                window.setStatusBarColor(animatedValue);
+            }
+        });
+
+        colorAnimator.start();
     }
 }
