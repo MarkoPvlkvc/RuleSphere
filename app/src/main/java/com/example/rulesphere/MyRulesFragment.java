@@ -126,17 +126,75 @@ public class MyRulesFragment extends Fragment {
             }
         });
 
-        addQuoteFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                View addRuleView = inflater.inflate(R.layout.add_rule_view, container, false);
-                FrameLayout addRuleFrameLayout = getActivity().findViewById(R.id.addRuleFrameLayout);
+        materialButtonToggleGroup.check(myRulesFavorites.getId());
 
-                addRuleFrameLayout.addView(addRuleView);
-            }
+        View addRuleView = inflater.inflate(R.layout.add_rule_view, container, false);
+        FrameLayout addRuleFrameLayout = getActivity().findViewById(R.id.addRuleFrameLayout);
+        addQuoteFab.setOnClickListener(v -> {
+            addRuleFrameLayout.addView(addRuleView);
         });
 
-        materialButtonToggleGroup.check(myRulesFavorites.getId());
+        MaterialButton closeNewRuleViewButton = addRuleView.findViewById(R.id.closeNewRuleView);
+        closeNewRuleViewButton.setOnClickListener(v -> {
+            addRuleFrameLayout.removeView(addRuleView);
+        });
+
+        class MutableString {
+            private String value;
+
+            public String getValue() {
+                return value;
+            }
+
+            public void setValue(String value) {
+                this.value = value;
+            }
+        }
+
+        ChipGroup filterChipGroup = addRuleView.findViewById(R.id.filterChipGroupNewRule);
+        MutableString pickedCategoryWrapper = new MutableString();
+
+        MaterialButton.OnCheckedChangeListener filterOnChecked = new MaterialButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(MaterialButton button, boolean isChecked) {
+                if (isChecked) {
+                    button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorPrimaryContainer)));
+                    button.setStrokeColor(ColorStateList.valueOf(getContext().getColor(android.R.color.transparent)));
+                } else {
+                    button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorSurfaceVariant)));
+                    button.setStrokeColor(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorOutline)));
+                }
+            }
+        };
+
+        View.OnClickListener filterOnClick = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChipGroup chipGroup = (ChipGroup) v.getParent();
+                boolean somethingChecked = false;
+                for (int i = 0; i < chipGroup.getChildCount(); i++) {
+                    MaterialButton materialButton = (MaterialButton) chipGroup.getChildAt(i);
+
+                    if (materialButton == v && materialButton.isChecked()) {
+                        pickedCategoryWrapper.setValue((String) materialButton.getText());
+                        somethingChecked = true;
+                        continue;
+                    }
+
+                    materialButton.setChecked(false);
+                }
+
+                if (!somethingChecked) {
+                    pickedCategoryWrapper.setValue("");
+                }
+            }
+        };
+
+        for (int i = 0; i < filterChipGroup.getChildCount(); i++) {
+            MaterialButton materialButton = (MaterialButton) filterChipGroup.getChildAt(i);
+            materialButton.addOnCheckedChangeListener(filterOnChecked);
+            materialButton.setOnClickListener(filterOnClick);
+        }
 
         return view;
     }
