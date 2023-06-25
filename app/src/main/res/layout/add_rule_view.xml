@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="@+id/closeSearchView" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/closeSearchView"
+        android:id="@+id/closeNewRuleView"
         style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
         android:backgroundTint="?attr/colorSurfaceVariant"
         android:layout_width="wrap_content"
@@ -38,27 +38,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:paddingBottom="20dp"
         android:background="@drawable/new_rule_container_background"
+        android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/closeSearchView">
+        app:layout_constraintTop_toBottomOf="@+id/closeNewRuleView">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ruleNameInput"
-            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
             android:hint="Rule"
-            app:startIconDrawable="@drawable/baseline_create_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/baseline_create_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -68,17 +66,14 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ruleAuthorInput"
-            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
             android:hint="Author"
-            app:startIconDrawable="@drawable/round_person_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ruleNameInput">
+            app:layout_constraintTop_toBottomOf="@id/ruleNameInput"
+            app:startIconDrawable="@drawable/round_person_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -99,7 +94,7 @@
             app:layout_constraintTop_toBottomOf="@+id/ruleAuthorInput" />
 
         <com.google.android.material.chip.ChipGroup
-            android:id="@+id/filterChipGroup"
+            android:id="@+id/filterChipGroupNewRule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -113,6 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Religion"
+                android:checkable="true"
                 android:textColor="?attr/colorOnSurfaceVariant" />
 
             <com.google.android.material.button.MaterialButton
@@ -120,6 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Movie"
+                android:checkable="true"
                 android:textColor="?attr/colorOnSurfaceVariant" />
 
             <com.google.android.material.button.MaterialButton
@@ -127,6 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Philosophy"
+                android:checkable="true"
                 android:textColor="?attr/colorOnSurfaceVariant" />
 
             <com.google.android.material.button.MaterialButton
@@ -134,6 +132,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Martial Arts"
+                android:checkable="true"
                 android:textColor="?attr/colorOnSurfaceVariant" />
 
             <com.google.android.material.button.MaterialButton
@@ -141,6 +140,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Famous People"
+                android:checkable="true"
                 android:textColor="?attr/colorOnSurfaceVariant" />
 
             <com.google.android.material.button.MaterialButton
@@ -148,6 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sport"
+                android:checkable="true"
                 android:textColor="?attr/colorOnSurfaceVariant" />
 
             <com.google.android.material.button.MaterialButton
@@ -155,6 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Music"
+                android:checkable="true"
                 android:textColor="?attr/colorOnSurfaceVariant" />
         </com.google.android.material.chip.ChipGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>

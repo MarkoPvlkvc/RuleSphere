@@ -497,7 +497,7 @@ public class MainActivity extends AppCompatActivity {
                 ChipGroup chipGroup = (ChipGroup) v.getParent();
                 boolean somethingChecked = false;
                 for (int i = 0; i < chipGroup.getChildCount(); i++) {
-                    MaterialButton materialButton = (MaterialButton) filterBottomSheetChipGroup.getChildAt(i);
+                    MaterialButton materialButton = (MaterialButton) chipGroup.getChildAt(i);
 
                     if (materialButton == v && materialButton.isChecked()) {
                         searchViewCategory = (String) materialButton.getText();
