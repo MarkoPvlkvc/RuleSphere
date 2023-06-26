@@ -114,8 +114,6 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-
-                updateSearchView();
             }
         });
         // Database
@@ -124,19 +122,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         // INITIALIZATION
-        searchView = findViewById(R.id.search_view);
-        recyclerView = findViewById(R.id.recycler_view_search);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        goToTopButton = findViewById(R.id.extended_fab_go_to_top);
-
-        religionChip = findViewById(R.id.religionChip);
-        movieChip = findViewById(R.id.movieChip);
-        philosophyChip = findViewById(R.id.philosophyChip);
-        martialArtsChip = findViewById(R.id.martialArtsChip);
-        famousPeopleChip = findViewById(R.id.famousPeopleChip);
-        sportChip = findViewById(R.id.sportChip);
-        musicChip = findViewById(R.id.musicChip);
-
         isNightMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 
         if (isNightMode) {
@@ -151,114 +136,29 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new HomeFragment());
         activeFragment = "home";
 
-        searchView.getToolbar().setNavigationOnClickListener(v -> {
-            onBackPressed();
-        });
-
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.home) {
-                if (Objects.equals(activeFragment, "home") && !searchView.isShowing())
+                if (Objects.equals(activeFragment, "home") && findViewById(R.id.closeSearchView) == null)
                     return true;
                 activeFragment = "home";
-                if (searchView.isShowing())
-                    searchView.hide();
                 hideSearchView();
                 replaceFragment(new HomeFragment());
             } else if (item.getItemId() == R.id.search) {
-                updateSearchView();
-                searchView.show();
-                updateStatusBarColor();
-                //searchView.getToolbar().setLogo(R.drawable.baseline_format_quote_24);
+                showSearchView();
             } else if (item.getItemId() == R.id.design) {
-                if (Objects.equals(activeFragment, "design") && !searchView.isShowing())
+                if (Objects.equals(activeFragment, "design") && findViewById(R.id.closeSearchView) == null)
                     return true;
                 activeFragment = "design";
-                if (searchView.isShowing())
-                    searchView.hide();
                 hideSearchView();
                 replaceFragment(new DesignFragment());
             } else if (item.getItemId() == R.id.myRules) {
-                if (Objects.equals(activeFragment, "myRules") && !searchView.isShowing())
+                if (Objects.equals(activeFragment, "myRules") && findViewById(R.id.closeSearchView) == null)
                     return true;
                 activeFragment = "myRules";
-                if (searchView.isShowing())
-                    searchView.hide();
                 hideSearchView();
                 replaceFragment(new MyRulesFragment());
             }
             return true;
-        });
-
-        goToTopButton.setOnClickListener(v -> {
-            final float MILLISECONDS_PER_INCH = 5f;
-            LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) {
-                @Override
-                protected float calculateSpeedPerPixel(DisplayMetrics displayMetrics) {
-                    return MILLISECONDS_PER_INCH / displayMetrics.densityDpi;
-                }
-            };
-
-            linearSmoothScroller.setTargetPosition(0);
-            recyclerView.getLayoutManager().startSmoothScroll(linearSmoothScroller);
-        });
-
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-
-                if (dy < 0) {
-                    goToTopButton.show();
-                } else {
-                    goToTopButton.hide();
-                }
-            }
-
-            @Override
-            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-
-                if (newState == RecyclerView.SCROLL_STATE_IDLE && recyclerView.computeVerticalScrollOffset() == 0) {
-                    goToTopButton.hide();
-                }
-            }
-        });
-
-        searchView.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                searchViewText = searchView.getText().toString();
-                updateSearchView();
-                return false;
-            }
-        });
-
-        ChipGroup chipGroup = findViewById(R.id.chipGroup);
-        chipGroup.setOnCheckedStateChangeListener(new ChipGroup.OnCheckedStateChangeListener() {
-            @Override
-            public void onCheckedChanged(@NonNull ChipGroup group, @NonNull List<Integer> checkedIds) {
-                for (int i = 0; i < group.getChildCount(); i++) {
-                    Chip chip = (Chip) group.getChildAt(i);
-
-                    if (checkedIds.contains(chip.getId())) {
-                        if (isNightMode)
-                            chip.setChipBackgroundColorResource(R.color.md_theme_light_primary);
-                        else
-                            chip.setChipBackgroundColorResource(com.google.android.material.R.color.material_dynamic_primary80);
-
-                        searchViewCategory = chip.getText().toString();
-
-                        continue;
-                    }
-
-                    if (checkedIds.isEmpty())
-                        searchViewCategory = "";
-
-                    chip.setChipBackgroundColor(null);
-                }
-
-                updateSearchView();
-            }
         });
     }
 
@@ -275,14 +175,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (searchView.isShowing() || findViewById(R.id.closeSearchView) != null) {
+        if (findViewById(R.id.closeSearchView) != null) {
             View searchContext = findViewById(R.id.searchContext);
             if (searchContext != null) {
                 searchContext.findViewById(R.id.imageView).performClick();
                 return;
             }
 
-            searchView.hide();
             hideSearchView();
 
             if (Objects.equals(activeFragment, "home"))
@@ -291,8 +190,6 @@ public class MainActivity extends AppCompatActivity {
                 binding.bottomNavigation.setSelectedItemId(R.id.design);
             else if (Objects.equals(activeFragment, "myRules"))
                 binding.bottomNavigation.setSelectedItemId(R.id.myRules);
-
-            //updateStatusBarColor();
         } else {
             super.onBackPressed();
         }
@@ -300,27 +197,6 @@ public class MainActivity extends AppCompatActivity {
 
     public RuleSphereDatabase getDb() {
         return RuleSphereDatabase.getInstance(getApplicationContext());
-    }
-
-    public void updateSearchView() {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                List<Quote> quotes;
-                QuoteDao quoteDao = getDb().quoteDao();
-
-                quotes = quoteDao.getAllSearchAndCategory2(searchViewText, searchViewCategory);
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this, R.id.recycler_view_search);
-                        recyclerView.setAdapter(adapter);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                    }
-                });
-            }
-        });
     }
 
     public void updateMyRulesList(RecyclerView rv) {

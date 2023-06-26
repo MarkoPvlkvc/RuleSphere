@@ -3,6 +3,7 @@ package com.example.rulesphere;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.doubleClick;
+import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
@@ -14,10 +15,14 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
 
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.test.core.app.ApplicationProvider;
 import androidx.test.espresso.Espresso;
 import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.espresso.UiController;
@@ -86,8 +91,8 @@ public class MainActivityEndTest {
 
         onView(withId(R.id.search)).perform(click());
 
-        onView(withId(R.id.search_view))
-                .perform(new SearchViewSetTextAction(searchTerm));
+        onView(withId(R.id.searchViewInput)).perform(click());
+        onView(withId(R.id.searchViewInput)).perform(typeText(searchTerm));
 
         onView(withId(R.id.recycler_view_search))
                 .perform(actionOnItemAtPosition(0, doubleClick()));
