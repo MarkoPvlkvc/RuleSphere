@@ -15,10 +15,10 @@
         android:text="New Rule"
         android:textAppearance="?attr/textAppearanceTitleSmall"
         android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/closeSearchView"
+        app:layout_constraintBottom_toBottomOf="@+id/closeNewRuleView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/closeSearchView" />
+        app:layout_constraintTop_toTopOf="@+id/closeNewRuleView" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/closeNewRuleView"
@@ -47,11 +47,12 @@
         app:layout_constraintTop_toBottomOf="@+id/closeNewRuleView">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ruleNameInput"
-            style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
+            android:id="@+id/ruleInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:hint="Rule"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,13 +67,15 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ruleAuthorInput"
-            style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             android:hint="Author"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ruleNameInput"
+            app:layout_constraintTop_toBottomOf="@id/ruleInput"
             app:startIconDrawable="@drawable/round_person_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -164,8 +167,8 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addRule"
         style="@style/Widget.Material3.Button.IconButton.Filled"
-        android:backgroundTint="?attr/colorPrimaryContainer"
-        android:textColor="?attr/colorOnPrimaryContainer"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"

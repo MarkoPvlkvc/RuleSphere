@@ -5,26 +5,20 @@ import android.content.ClipboardManager;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
@@ -32,22 +26,17 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.transition.MaterialFadeThrough;
+import com.google.android.material.textfield.TextInputLayout;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -100,12 +89,12 @@ public class HomeFragment extends Fragment {
     MaterialCardView materialCardView;
     MaterialButton favoriteButton, createQuoteButton, designWallpaperButton,
     copyQuoteButton, saveQuoteButton;
-    TextView ruleOfDayDay, ruleOfDayQuote, ruleOfDayAuthor;
+    TextView ruleOfDayDay, ruleOfDayQuote, ruleOfDayAuthor, profileNameText;
     ScrollView scrollView;
     View.OnScrollChangeListener scrollViewScrollChange;
     int statusBarDefaultColor, statusBarScrolledColor;
     boolean isNightMode;
-    FrameLayout shareBottomSheet;
+    FrameLayout shareBottomSheet, profileBottomSheet;
     ExtendedFloatingActionButton shareFAB;
 
     @Override
@@ -122,6 +111,7 @@ public class HomeFragment extends Fragment {
         createQuoteButton = view.findViewById(R.id.createQuoteButton);
         designWallpaperButton = view.findViewById(R.id.designWallpaperButton);
         scrollView = view.findViewById(R.id.homeScrolLView);
+        profileNameText = view.findViewById(R.id.profileNameText);
 
         isNightMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 
@@ -133,21 +123,30 @@ public class HomeFragment extends Fragment {
         if (shareBottomSheet.getParent() != null) {
             ((ViewGroup) shareBottomSheet.getParent()).removeView(shareBottomSheet);
         }
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
-        bottomSheetDialog.setContentView(shareBottomSheet);
+        BottomSheetDialog shareBottomSheetDialog = new BottomSheetDialog(getContext());
+        shareBottomSheetDialog.setContentView(shareBottomSheet);
+
+        profileBottomSheet = view.findViewById(R.id.profileBottomSheet);
+        if (profileBottomSheet.getParent() != null) {
+            ((ViewGroup) profileBottomSheet.getParent()).removeView(profileBottomSheet);
+        }
+        BottomSheetDialog profileBottomSheetDialog = new BottomSheetDialog(getContext());
+        profileBottomSheetDialog.setContentView(profileBottomSheet);
 
         if (isNightMode) {
             statusBarDefaultColor = getContext().getColor(R.color.md_theme_dark_background);
             statusBarScrolledColor = getContext().getColor(R.color.md_theme_dark_scrolled);
-
-            designWallpaperButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_dark_scrolled)));
-            createQuoteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_dark_scrolled)));
         } else {
             statusBarDefaultColor = getContext().getColor(R.color.md_theme_light_background);
             statusBarScrolledColor = getContext().getColor(R.color.md_theme_light_scrolled);
+        }
 
-            designWallpaperButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_scrolled)));
-            createQuoteButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(R.color.md_theme_light_scrolled)));
+        String profileName = SharedPreferencesManager.getProfileName(new String());
+        if (profileName.isEmpty()) {
+            profileNameText.setText("Guest.");
+        } else {
+            profileName = profileName + ".";
+            profileNameText.setText(profileName);
         }
 
         //SET TODAY'S QUOTE
@@ -263,7 +262,7 @@ public class HomeFragment extends Fragment {
         scrollView.setOnScrollChangeListener(scrollViewScrollChange);
 
         shareFAB.setOnClickListener(v -> {
-            bottomSheetDialog.show();
+            shareBottomSheetDialog.show();
         });
 
         copyQuoteButton.setOnClickListener(v -> {
@@ -277,13 +276,28 @@ public class HomeFragment extends Fragment {
 
             Toast.makeText(getContext(), "Rule copied to clipboard", Toast.LENGTH_SHORT).show();
 
-            bottomSheetDialog.hide();
+            shareBottomSheetDialog.hide();
         });
 
         saveQuoteButton.setOnClickListener(v -> {
             saveViewToJpeg(view.findViewById(R.id.ruleCard));
 
-            bottomSheetDialog.hide();
+            shareBottomSheetDialog.hide();
+        });
+
+        MaterialToolbar topAppBar = getActivity().findViewById(R.id.topAppBar);
+        topAppBar.findViewById(R.id.profile).setOnClickListener(v -> {
+            profileBottomSheetDialog.show();
+        });
+
+        profileBottomSheet.findViewById(R.id.updateProfileName).setOnClickListener(v -> {
+            TextInputLayout profileNameInput = profileBottomSheet.findViewById(R.id.profileNameInput);
+            String profileNameTemp = profileNameInput.getEditText().getText().toString();
+            SharedPreferencesManager.putProfileName(profileNameTemp);
+            profileNameTemp = profileNameTemp + ".";
+            profileNameText.setText(profileNameTemp);
+            profileBottomSheetDialog.hide();
+            profileNameInput.getEditText().getText().clear();
         });
 
         return view;

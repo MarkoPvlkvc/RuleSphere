@@ -100,8 +100,26 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/deleteQuoteContext"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:backgroundTint="?attr/colorOnError"
+        android:textColor="?attr/colorOnErrorContainer"
+        app:iconTint="?attr/colorOnErrorContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Delete"
+        app:icon="@drawable/round_delete_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/useQuoteContext"
         style="@style/Widget.Material3.Button.TonalButton"
+        android:backgroundTint="?attr/colorSurfaceVariant"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:iconTint="?attr/colorOnSurface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -113,6 +131,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/copyQuoteContext"
         style="@style/Widget.Material3.Button.TonalButton"
+        android:backgroundTint="?attr/colorSurfaceVariant"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:iconTint="?attr/colorOnSurface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Copy Rule"
@@ -123,6 +144,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveQuoteContext"
         style="@style/Widget.Material3.Button.TonalButton"
+        android:backgroundTint="?attr/colorSurfaceVariant"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:iconTint="?attr/colorOnSurface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save Rule"
