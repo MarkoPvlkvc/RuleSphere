@@ -162,6 +162,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView4">
 
                 <com.google.android.material.button.MaterialButton
+                    android:enabled="false"
                     android:id="@+id/createQuoteButton"
                     style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
                     android:layout_width="0dp"
@@ -199,7 +200,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:elevation="10dp"
-        tools:visibility="visible">
+        tools:visibility="gone">
 
         <FrameLayout
             android:id="@+id/shareBottomSheet"
@@ -336,6 +337,7 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView2">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/usedForMidTest"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Enter name"/>

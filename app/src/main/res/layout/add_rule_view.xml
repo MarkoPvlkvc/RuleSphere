@@ -60,6 +60,7 @@
             app:startIconDrawable="@drawable/baseline_create_24">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usedForMidTest2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

@@ -234,8 +234,7 @@ public class HomeFragment extends Fragment {
             if (createQuoteButton.isChecked()) {
                 createQuoteButton.setChecked(false);
 
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.showSearchView();
+                //Do smth
             }
         });
 
