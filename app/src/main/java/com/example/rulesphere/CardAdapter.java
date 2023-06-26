@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -110,17 +111,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             holder.materialCardView.setChecked(true);
             holder.materialCardView.setCardForegroundColor(null);
 
-//            if (recyclerViewId == R.id.recycler_view_search) {
-//                holder.materialCardView.setStrokeWidth(3);
-//            }
             holder.materialCardView.setStrokeWidth(3);
         } else {
             holder.favoriteButton.setChecked(false);
             holder.materialCardView.setChecked(false);
 
-//            if (recyclerViewId == R.id.recycler_view_search) {
-//                holder.materialCardView.setStrokeWidth(0);
-//            }
             holder.materialCardView.setStrokeWidth(0);
         }
 
@@ -167,26 +162,34 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
                 TextView author = view.findViewById(R.id.author);
                 TextView quote = view.findViewById(R.id.quote);
+                TextView quoteId = view.findViewById(R.id.quote_id);
                 searchContext.setElevation(20f);
                 TextView authorContext = searchContext.findViewById(R.id.author);
                 TextView quoteContext = searchContext.findViewById(R.id.quote);
+                TextView quoteIdContext = searchContext.findViewById(R.id.quote_id);
                 authorContext.setText(author.getText());
                 quoteContext.setText(quote.getText());
+                quoteIdContext.setText(quoteId.getText());
+
+                if (recyclerViewId != R.id.recycler_view_myRules) {
+                    searchContext.findViewById(R.id.deleteQuoteContext).setVisibility(View.GONE);
+                } else {
+                    MaterialButton myRulesFavorites = mainActivity.findViewById(R.id.myRulesFavorites);
+
+                    if (myRulesFavorites.isChecked()) {
+                        searchContext.findViewById(R.id.deleteQuoteContext).setVisibility(View.GONE);
+                    }
+                }
 
                 parentView.addView(searchContext);
-                mainActivity.getWindow().setStatusBarColor(Color.parseColor("#07090B"));
+                mainActivity.getWindow().setStatusBarColor(Color.parseColor("#060606"));
                 //setStatusBarColor(Color.parseColor("#07090B"));
 
                 searchContext.findViewById(R.id.imageView).setOnClickListener(v -> {
                     parentView.removeView(searchContext);
 
-                    if (mainActivity.isNightMode) {
-                        mainActivity.getWindow().setStatusBarColor(view.getContext().getColor(R.color.md_theme_dark_searchViewInputBackground));
-                        //setStatusBarColor(view.getContext().getColor(R.color.md_theme_dark_searchViewInputBackground));
-                    } else {
-                        mainActivity.getWindow().setStatusBarColor(view.getContext().getColor(R.color.md_theme_light_searchViewInputBackground));
-                        //setStatusBarColor(view.getContext().getColor(R.color.md_theme_light_searchViewInputBackground));
-                    }
+                    int color = mainActivity.getColorFromResource(mainActivity, android.R.attr.colorBackground);
+                    mainActivity.getWindow().setStatusBarColor(color);
                 });
 
                 searchContext.findViewById(R.id.useQuoteContext).setOnClickListener(v -> {
@@ -197,14 +200,23 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                     searchContext.findViewById(R.id.imageView).performClick();
 
                     new Handler().postDelayed(() -> {
-                        //mainActivity.binding.bottomNavigation.setSelectedItemId(R.id.design);
                         mainActivity.findViewById(R.id.design).performClick();
-                    }, 100);
-
-                    setStatusBarColor(view.getContext().getColor(R.color.md_theme_dark_background));
+                    }, 50);
                 });
 
-                //showPopupMenu(searchContext.findViewById(R.id.ruleCard), parentView, searchContext);
+                searchContext.findViewById(R.id.deleteQuoteContext).setOnClickListener(v -> {
+                    AsyncTask.execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            QuoteDao quoteDao = getDb().quoteDao();
+                            Quote quote = quoteDao.getQuote((String) quoteIdContext.getText());
+                            quoteDao.delete(quote);
+                        }
+                    });
+
+                    mainActivity.updateMyQuotesList(mainActivity.findViewById(R.id.recycler_view_myRules));
+                    parentView.removeView(searchContext);
+                });
                 return true;
             }
         });
@@ -243,9 +255,15 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
                     try {
                         RecyclerView rv = mainActivity.findViewById(R.id.recycler_view_myRules);
+                        MaterialButton myRulesFavorites = mainActivity.findViewById(R.id.myRulesFavorites);
 
-                        if (rv != null)
-                            mainActivity.updateMyRulesList(rv);
+                        if (rv != null) {
+                            if (myRulesFavorites.isChecked()) {
+                                mainActivity.updateMyRulesList(rv);
+                            } else {
+                                mainActivity.updateMyQuotesList(rv);
+                            }
+                        }
                     } catch (NullPointerException ignored) {}
 
                     Animation animation = AnimationUtils.loadAnimation(view.getContext(), R.anim.like_anim);
@@ -275,70 +293,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         }
     }
 
-//    private void showPopupMenu(View view, ViewGroup topParentView, View searchContext) {
-//        PopupMenu popupMenu = new PopupMenu(view.getContext(), view, Gravity.START, 0, R.style.PopupMenuStyle);
-//        popupMenu.inflate(R.menu.search_popup_menu);
-//
-//        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem menuItem) {
-//                if (menuItem.getItemId() == R.id.useInDesignPopup) {
-//                    SharedPreferencesManager.init(view.getContext());
-//                    Set<String> stringSet = new HashSet<>();
-//                    TextView author = view.findViewById(R.id.author);
-//                    TextView quote = view.findViewById(R.id.quote);
-//
-//                    stringSet.add((String) author.getText());
-//                    stringSet.add((String) quote.getText());
-//
-//                    SharedPreferencesManager.putStringSet("quoteForDesign", stringSet);
-//
-////                    new Handler().postDelayed(() -> {
-////                        mainActivity.binding.bottomNavigation.setSelectedItemId(R.id.design);
-////                    }, 100);
-//                    return true;
-//                } else if (menuItem.getItemId() == R.id.shareRulePopup) {
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
-//
-//        popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
-//            @Override
-//            public void onDismiss(PopupMenu popupMenu) {
-//                topParentView.removeView(searchContext);
-//
-//                if (mainActivity.isNightMode) {
-//                    setStatusBarColor(view.getContext().getColor(R.color.md_theme_dark_searchViewInputBackground));
-//                } else {
-//                    setStatusBarColor(view.getContext().getColor(R.color.md_theme_light_searchViewInputBackground));
-//                }
-//            }
-//        });
-//
-//        popupMenu.show();
-//    }
-
-    private ValueAnimator colorAnimation;
-    public void setStatusBarColor(int color) {
-        Window window = mainActivity.getWindow();
-        colorAnimation = ValueAnimator.ofArgb(window.getStatusBarColor(), color);
-        colorAnimation.setDuration(250);
-
-        colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animator) {
-                int color = (int) animator.getAnimatedValue();
-                window.setStatusBarColor(color);
-            }
-        });
-
-        colorAnimation.start();
-    }
-    public void cancelStatusBarColorAnimation() {
-        if (colorAnimation != null && colorAnimation.isRunning()) {
-            colorAnimation.cancel();
-        }
+    public RuleSphereDatabase getDb() {
+        return RuleSphereDatabase.getInstance(mainActivity);
     }
 }

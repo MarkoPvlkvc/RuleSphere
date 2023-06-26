@@ -7,6 +7,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -17,6 +18,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.transition.ChangeBounds;
+import android.transition.Fade;
+import android.transition.Transition;
+import android.transition.TransitionManager;
+import android.transition.TransitionSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -24,6 +30,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 
 import com.google.android.material.button.MaterialButton;
@@ -31,8 +38,15 @@ import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.transition.platform.MaterialArcMotion;
+import com.google.android.material.transition.platform.MaterialContainerTransform;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,11 +100,13 @@ public class MyRulesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_my_rules, container, false);
         MainActivity mainActivity = (MainActivity) getActivity();
+        QuoteDao quoteDao = getDb().quoteDao();
 
         MaterialButton myRulesFavorites = view.findViewById(R.id.myRulesFavorites);
         MaterialButton myRulesQuotes = view.findViewById(R.id.myRulesQuotes);
 
         RecyclerView rv = view.findViewById(R.id.recycler_view_myRules);
+
         FloatingActionButton addQuoteFab = view.findViewById(R.id.fab_addQuote);
 
         boolean isNightMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
@@ -109,6 +125,8 @@ public class MyRulesFragment extends Fragment {
 
                     if (checkedId == materialButton.getId()) {
                         materialButton.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorPrimaryContainer)));
+                        materialButton.setTextColor(getColorFromResource(getContext(), com.google.android.material.R.attr.colorOnPrimaryContainer));
+                        materialButton.setIconTint(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorOnPrimaryContainer)));
 
                         if (checkedId == myRulesFavorites.getId()) {
                             mainActivity.updateMyRulesList(rv);
@@ -122,6 +140,8 @@ public class MyRulesFragment extends Fragment {
                     }
 
                     materialButton.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorSurfaceVariant)));
+                    materialButton.setTextColor(getColorFromResource(getContext(), com.google.android.material.R.attr.colorOnSurfaceVariant));
+                    materialButton.setIconTint(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorOnSurfaceVariant)));
                 }
             }
         });
@@ -129,14 +149,42 @@ public class MyRulesFragment extends Fragment {
         materialButtonToggleGroup.check(myRulesFavorites.getId());
 
         View addRuleView = inflater.inflate(R.layout.add_rule_view, container, false);
+        addRuleView.setVisibility(View.INVISIBLE);
         FrameLayout addRuleFrameLayout = getActivity().findViewById(R.id.addRuleFrameLayout);
+        addRuleFrameLayout.addView(addRuleView);
+
+        MaterialContainerTransform containerTransformToView = new MaterialContainerTransform();
+        containerTransformToView.setStartView(addQuoteFab);
+        containerTransformToView.setEndView(addRuleView);
+        containerTransformToView.addTarget(addRuleView);
+        containerTransformToView.setPathMotion(new MaterialArcMotion());
+        containerTransformToView.setScrimColor(Color.TRANSPARENT);
+
+        MaterialContainerTransform containerTransformFromView = new MaterialContainerTransform();
+        containerTransformFromView.setStartView(addRuleView);
+        containerTransformFromView.setEndView(addQuoteFab);
+        containerTransformFromView.addTarget(addQuoteFab);
+        containerTransformFromView.setPathMotion(new MaterialArcMotion());
+        containerTransformFromView.setScrimColor(Color.TRANSPARENT);
+
         addQuoteFab.setOnClickListener(v -> {
-            addRuleFrameLayout.addView(addRuleView);
+            TransitionManager.beginDelayedTransition(container, containerTransformToView);
+            addQuoteFab.setVisibility(View.INVISIBLE);
+            addRuleView.setVisibility(View.VISIBLE);
         });
 
         MaterialButton closeNewRuleViewButton = addRuleView.findViewById(R.id.closeNewRuleView);
+
         closeNewRuleViewButton.setOnClickListener(v -> {
-            addRuleFrameLayout.removeView(addRuleView);
+            View view1 = getActivity().getCurrentFocus();
+            if (view1 != null) {
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view1.getWindowToken(), 0);
+            }
+
+            TransitionManager.beginDelayedTransition(container, containerTransformFromView);
+            addQuoteFab.setVisibility(View.VISIBLE);
+            addRuleView.setVisibility(View.INVISIBLE);
         });
 
         class MutableString {
@@ -158,10 +206,12 @@ public class MyRulesFragment extends Fragment {
             @Override
             public void onCheckedChanged(MaterialButton button, boolean isChecked) {
                 if (isChecked) {
-                    button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorPrimaryContainer)));
-                    button.setStrokeColor(ColorStateList.valueOf(getContext().getColor(android.R.color.transparent)));
+                    button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorPrimary)));
+                    button.setTextColor(getColorFromResource(getContext(), com.google.android.material.R.attr.colorOnPrimary));
+                    button.setStrokeColor(ColorStateList.valueOf(Color.TRANSPARENT));
                 } else {
                     button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorSurfaceVariant)));
+                    button.setTextColor(getColorFromResource(getContext(), com.google.android.material.R.attr.colorOnSurfaceVariant));
                     button.setStrokeColor(ColorStateList.valueOf(getColorFromResource(getContext(), com.google.android.material.R.attr.colorOutline)));
                 }
             }
@@ -196,6 +246,47 @@ public class MyRulesFragment extends Fragment {
             materialButton.setOnClickListener(filterOnClick);
         }
 
+        TextInputLayout ruleInput = addRuleView.findViewById(R.id.ruleInput);
+        TextInputLayout ruleAuthorInput = addRuleView.findViewById(R.id.ruleAuthorInput);
+        MaterialButton addRuleButton = addRuleView.findViewById(R.id.addRule);
+
+        addRuleButton.setOnClickListener(v -> {
+            if (ruleInput.getEditText().getText().toString().isEmpty()) {
+                ruleInput.setError("Please enter a Rule");
+                return;
+            }
+
+            Quote quote = new Quote();
+            quote.quote = ruleInput.getEditText().getText().toString();
+            quote.author = ruleAuthorInput.getEditText().getText().toString();
+            quote.category = pickedCategoryWrapper.getValue();
+            quote.isPersonal = true;
+
+            if (quote.author.equals("")) {
+                quote.author = "Unknown";
+            }
+
+            AsyncTask.execute(new Runnable() {
+                @Override
+                public void run() {
+                    quoteDao.insert(quote);
+                }
+            });
+
+            mainActivity.updateMyQuotesList(rv);
+            TransitionManager.beginDelayedTransition(container, containerTransformFromView);
+            addQuoteFab.setVisibility(View.VISIBLE);
+            addRuleView.setVisibility(View.INVISIBLE);
+
+            ruleInput.getEditText().getText().clear();
+            ruleAuthorInput.getEditText().getText().clear();
+
+            for (int i = 0; i < filterChipGroup.getChildCount(); i++) {
+                MaterialButton materialButton = (MaterialButton) filterChipGroup.getChildAt(i);
+                materialButton.setChecked(false);
+            }
+        });
+
         return view;
     }
 
@@ -212,5 +303,71 @@ public class MyRulesFragment extends Fragment {
         }
 
         return colorSurfaceVariant;
+    }
+
+    public RuleSphereDatabase getDb() {
+        return RuleSphereDatabase.getInstance(getContext());
+    }
+
+    class MutableQuoteList {
+        private List<Quote> value;
+
+        public List<Quote> getValue() {
+            return value;
+        }
+
+        public void setValue(List<Quote> value) {
+            this.value = value;
+        }
+    }
+
+    public List<Quote> getFavorites() {
+        QuoteDao quoteDao = getDb().quoteDao();
+        MutableQuoteList quotes = new MutableQuoteList();
+
+        CountDownLatch latch = new CountDownLatch(1);
+
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                quotes.setValue(quoteDao.getFavorites());
+
+                latch.countDown();
+            }
+        });
+
+        try {
+            // Wait for the task to complete
+            latch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return quotes.getValue();
+    }
+
+    public List<Quote> getPersonal() {
+        QuoteDao quoteDao = getDb().quoteDao();
+        MutableQuoteList quotes = new MutableQuoteList();
+
+        CountDownLatch latch = new CountDownLatch(1);
+
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                quotes.setValue(quoteDao.getPersonal());
+
+                latch.countDown();
+            }
+        });
+
+        try {
+            // Wait for the task to complete
+            latch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return quotes.getValue();
     }
 }

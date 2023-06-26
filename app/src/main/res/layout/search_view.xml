@@ -131,8 +131,7 @@
                     app:singleSelection="true">
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.Material3.Button.TonalButton"
-                        android:backgroundTint="?attr/colorSurfaceVariant"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -140,8 +139,7 @@
                         android:text="Religion" />
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.Material3.Button.ElevatedButton"
-                        android:backgroundTint="?attr/colorSurfaceVariant"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -149,8 +147,7 @@
                         android:text="Movie" />
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.Material3.Button.ElevatedButton"
-                        android:backgroundTint="?attr/colorSurfaceVariant"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -158,8 +155,7 @@
                         android:text="Philosophy" />
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.Material3.Button.ElevatedButton"
-                        android:backgroundTint="?attr/colorSurfaceVariant"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -167,8 +163,7 @@
                         android:text="Martial Arts" />
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.Material3.Button.ElevatedButton"
-                        android:backgroundTint="?attr/colorSurfaceVariant"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -176,8 +171,7 @@
                         android:text="Famous People" />
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.Material3.Button.ElevatedButton"
-                        android:backgroundTint="?attr/colorSurfaceVariant"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -185,8 +179,7 @@
                         android:text="Sport" />
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.Material3.Button.ElevatedButton"
-                        android:backgroundTint="?attr/colorSurfaceVariant"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

@@ -37,6 +37,14 @@ public class SharedPreferencesManager {
         return sharedPreferences.getString("authorForDesign", defaultValue);
     }
 
+    public static void putProfileName(String value) {
+        editor.putString("profileName", value);
+        editor.apply();
+    }
+    public static String getProfileName(String defaultValue) {
+        return sharedPreferences.getString("profileName", defaultValue);
+    }
+
     public static void clearSharedPreferences() {
         editor.clear();
     }

@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                 activeFragment = "home";
                 if (searchView.isShowing())
                     searchView.hide();
+                hideSearchView();
                 replaceFragment(new HomeFragment());
             } else if (item.getItemId() == R.id.search) {
                 updateSearchView();
@@ -174,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 activeFragment = "design";
                 if (searchView.isShowing())
                     searchView.hide();
+                hideSearchView();
                 replaceFragment(new DesignFragment());
             } else if (item.getItemId() == R.id.myRules) {
                 if (Objects.equals(activeFragment, "myRules") && !searchView.isShowing())
@@ -181,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
                 activeFragment = "myRules";
                 if (searchView.isShowing())
                     searchView.hide();
+                hideSearchView();
                 replaceFragment(new MyRulesFragment());
             }
             return true;
@@ -484,9 +487,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(MaterialButton button, boolean isChecked) {
                 if (isChecked) {
-                    button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(MainActivity.this, com.google.android.material.R.attr.colorPrimaryContainer)));
+                    button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(MainActivity.this, com.google.android.material.R.attr.colorPrimary)));
+                    button.setTextColor(getColorFromResource(MainActivity.this, com.google.android.material.R.attr.colorOnPrimary));
+                    button.setStrokeColor(ColorStateList.valueOf(Color.TRANSPARENT));
                 } else {
-                    button.setBackgroundTintList(ColorStateList.valueOf(getColorFromResource(MainActivity.this, com.google.android.material.R.attr.colorSurfaceVariant)));
+                    button.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
+                    button.setTextColor(getColorFromResource(MainActivity.this, com.google.android.material.R.attr.colorOnSurfaceVariant));
+                    button.setStrokeColor(ColorStateList.valueOf(getColorFromResource(MainActivity.this, com.google.android.material.R.attr.colorOutline)));
                 }
             }
         };
@@ -526,18 +533,11 @@ public class MainActivity extends AppCompatActivity {
         searchView.findViewById(R.id.closeSearchView).setOnClickListener(v2 -> {
             View view = this.getCurrentFocus();
             if (view != null) {
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
 
-            // Daje vremena tipkovnici da se zatvori da bi search view zauzimao cijeli ekran
-            // da mu animacija ne bi prekinula na pola ekrana prema dolje
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    hideSearchView();
-                }
-            }, 10);
+            hideSearchView();
         });
 
         MaterialButton filterSearchViewButton = searchView.findViewById(R.id.filterSearchView);
@@ -613,6 +613,10 @@ public class MainActivity extends AppCompatActivity {
     public void hideSearchView() {
         FrameLayout searchViewFrameLayout = findViewById(R.id.searchViewFrameLayout);
         View searchView = searchViewFrameLayout.getChildAt(0); // Get the first child view (searchView)
+
+        if (searchView == null) {
+            return;
+        }
 
         ScrollView homeScrollView = findViewById(R.id.homeScrolLView);
         if (homeScrollView != null) {
