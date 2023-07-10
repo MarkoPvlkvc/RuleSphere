@@ -13,11 +13,15 @@
 - Create your own wallpaper with desired quote/rule
 - Add personal quotes/rules
 
+<br>
+
 ## Screenshots
 
 | <img src="https://github.com/MarkoPvlkvc/RuleSphere/assets/98759639/1148997d-f9cc-4c50-bab7-a8c6636db4ea" style="width: 250px;"> | <img src="https://github.com/MarkoPvlkvc/RuleSphere/assets/98759639/a2462fda-ffab-47e1-9515-6f8c49599835" style="width: 250px;"> | <img src="https://github.com/MarkoPvlkvc/RuleSphere/assets/98759639/62e481fc-6f5c-48eb-8c15-14dab53a8c26" style="width: 250px;"> | <img src="https://github.com/MarkoPvlkvc/RuleSphere/assets/98759639/c72c0b01-0138-4390-8d5b-2e95db86d0df" style="width: 250px;"> |
 | :--: | :--: | :--: | :--: |
 | Home | Search | Design | My Rules |
+
+<br>
 
 ## License
 
