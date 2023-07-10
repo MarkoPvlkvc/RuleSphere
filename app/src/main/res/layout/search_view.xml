@@ -66,8 +66,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +88,8 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="6dp">
+        android:elevation="6dp"
+        tools:visibility="gone">
 
         <FrameLayout
             android:id="@+id/filterBottomSheet"
@@ -123,7 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="20dp"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -132,59 +133,59 @@
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
-                        android:text="Religion" />
+                        android:text="Religion"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
-                        android:text="Movie" />
+                        android:text="Movie"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
-                        android:text="Philosophy" />
+                        android:text="Philosophy"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
-                        android:text="Martial Arts" />
+                        android:text="Martial Arts"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
-                        android:text="Famous People" />
+                        android:text="Famous People"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
-                        android:text="Sport" />
+                        android:text="Sport"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checkable="true"
-                        android:text="Music" />
+                        android:text="Music"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
                 </com.google.android.material.chip.ChipGroup>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </FrameLayout>

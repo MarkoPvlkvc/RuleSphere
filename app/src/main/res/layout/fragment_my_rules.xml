@@ -15,7 +15,6 @@
             android:id="@+id/myRulesCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -24,31 +23,31 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/myRulesFavorites"
                 style="@style/Widget.Material3.Button.TonalButton"
-                android:backgroundTint="?attr/colorSurfaceVariant"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                app:iconTint="?attr/colorOnSurfaceVariant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorSurfaceVariant"
                 android:text="Favorites"
-                app:icon="@drawable/baseline_favorite_24" />
+                android:textColor="?attr/colorOnSurfaceVariant"
+                app:icon="@drawable/round_favorite_24"
+                app:iconTint="?attr/colorOnSurfaceVariant" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/myRulesQuotes"
                 style="@style/Widget.Material3.Button.TonalButton"
-                android:backgroundTint="?attr/colorSurfaceVariant"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                app:iconTint="?attr/colorOnSurfaceVariant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorSurfaceVariant"
                 android:text="My Quotes"
-                app:icon="@drawable/baseline_format_quote_24" />
+                android:textColor="?attr/colorOnSurfaceVariant"
+                app:icon="@drawable/baseline_format_quote_24"
+                app:iconTint="?attr/colorOnSurfaceVariant" />
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_myRules"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp"
             android:scrollbars="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/myRulesCategory" />

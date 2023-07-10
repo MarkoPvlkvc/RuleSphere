@@ -34,6 +34,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -49,6 +50,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.search.SearchView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.transition.MaterialFadeThrough;
+import com.google.android.material.transition.MaterialSharedAxis;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,6 +60,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
@@ -76,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
             famousPeopleChip, sportChip, musicChip;
     int statusBarDefaultColor, statusBarScrolledColor;
     boolean isNightMode;
+    MyRulesFragment fragmentMyRules;
+    HomeFragment fragmentHome;
+    DesignFragment fragmentDesign;
+    SearchViewManager searchViewManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,44 +140,85 @@ public class MainActivity extends AppCompatActivity {
         }
         // INITIALIZATION
 
-        replaceFragment(new HomeFragment());
-        activeFragment = "home";
+        //MaterialFadeThrough enterTransition = new MaterialFadeThrough();
+        //enterTransition.setSecondaryAnimatorProvider(null);
+        MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true);
+        MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.Z, true);
 
-        binding.bottomNavigation.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.home) {
-                if (Objects.equals(activeFragment, "home") && findViewById(R.id.closeSearchView) == null)
-                    return true;
-                activeFragment = "home";
-                hideSearchView();
-                replaceFragment(new HomeFragment());
-            } else if (item.getItemId() == R.id.search) {
-                showSearchView();
-            } else if (item.getItemId() == R.id.design) {
-                if (Objects.equals(activeFragment, "design") && findViewById(R.id.closeSearchView) == null)
-                    return true;
-                activeFragment = "design";
-                hideSearchView();
-                replaceFragment(new DesignFragment());
-            } else if (item.getItemId() == R.id.myRules) {
-                if (Objects.equals(activeFragment, "myRules") && findViewById(R.id.closeSearchView) == null)
-                    return true;
-                activeFragment = "myRules";
-                hideSearchView();
-                replaceFragment(new MyRulesFragment());
-            }
-            return true;
-        });
-    }
+        fragmentMyRules = new MyRulesFragment();
+        fragmentHome = HomeFragment.newInstance(fragmentMyRules);
+        fragmentDesign = new DesignFragment();
 
-    private void replaceFragment(Fragment fragment) {
-        MaterialFadeThrough enterTransition = new MaterialFadeThrough();
-        enterTransition.setSecondaryAnimatorProvider(null);
-        fragment.setEnterTransition(enterTransition);
+        fragmentHome.setEnterTransition(enterTransition);
+        fragmentHome.setReenterTransition(enterTransition);
+        fragmentDesign.setEnterTransition(enterTransition);
+        fragmentDesign.setReenterTransition(enterTransition);
+        fragmentMyRules.setEnterTransition(enterTransition);
+        fragmentMyRules.setReenterTransition(enterTransition);
+
+        fragmentHome.setExitTransition(exitTransition);
+        fragmentDesign.setExitTransition(exitTransition);
+        fragmentMyRules.setExitTransition(exitTransition);
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.frameLayout, fragment)
+                .replace(R.id.frameLayout, fragmentHome)
+                .add(R.id.frameLayout, fragmentDesign)
+                .add(R.id.frameLayout, fragmentMyRules)
+                .hide(fragmentDesign)
+                .hide(fragmentMyRules)
                 .commit();
+
+        activeFragment = "home";
+
+        //searchViewManager = new SearchViewManager(this);
+
+        binding.bottomNavigation.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.home) {
+                if (Objects.equals(activeFragment, "home") && findViewById(R.id.closeSearchView) == null) {
+                    return true;
+                }
+                activeFragment = "home";
+                hideSearchView();
+                //searchViewManager.hide();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .show(fragmentHome)
+                        .hide(fragmentDesign)
+                        .hide(fragmentMyRules)
+                        .commit();
+            } else if (item.getItemId() == R.id.search) {
+                showSearchView();
+                //searchViewManager.show();
+            } else if (item.getItemId() == R.id.design) {
+                if (Objects.equals(activeFragment, "design") && findViewById(R.id.closeSearchView) == null) {
+                    return true;
+                }
+                activeFragment = "design";
+                hideSearchView();
+                //searchViewManager.hide();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .hide(fragmentHome)
+                        .show(fragmentDesign)
+                        .hide(fragmentMyRules)
+                        .commit();
+            } else if (item.getItemId() == R.id.myRules) {
+                if (Objects.equals(activeFragment, "myRules") && findViewById(R.id.closeSearchView) == null) {
+                    return true;
+                }
+                activeFragment = "myRules";
+                hideSearchView();
+                //searchViewManager.hide();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .hide(fragmentHome)
+                        .hide(fragmentDesign)
+                        .show(fragmentMyRules)
+                        .commit();
+            }
+            return true;
+        });
     }
 
     @Override
@@ -199,48 +247,6 @@ public class MainActivity extends AppCompatActivity {
         return RuleSphereDatabase.getInstance(getApplicationContext());
     }
 
-    public void updateMyRulesList(RecyclerView rv) {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                List<Quote> quotes;
-                QuoteDao quoteDao = getDb().quoteDao();
-
-                quotes = quoteDao.getFavorites();
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this, R.id.recycler_view_myRules);
-                        rv.setAdapter(adapter);
-                        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                    }
-                });
-            }
-        });
-    }
-
-    public void updateMyQuotesList(RecyclerView rv) {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                List<Quote> quotes;
-                QuoteDao quoteDao = getDb().quoteDao();
-
-                quotes = quoteDao.getPersonal();
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        CardAdapter adapter = new CardAdapter(quotes, MainActivity.this, R.id.recycler_view_myRules);
-                        rv.setAdapter(adapter);
-                        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                    }
-                });
-            }
-        });
-    }
-
     public void favoriteAQuote(String id) {
         AsyncTask.execute(new Runnable() {
             @Override
@@ -249,37 +255,15 @@ public class MainActivity extends AppCompatActivity {
                 Quote quote = quoteDao.getQuote(id);
                 quote.isFavorite = !quote.isFavorite;
                 quoteDao.insert(quote);
+
+                runOnUiThread(() -> {
+                    int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
+                    if (quote.dayUsed == currentDay && (fragmentHome.isHidden() || findViewById(R.id.closeSearchView) != null)) {
+                        call_toggleCard();
+                    }
+                });
             }
         });
-    }
-
-    public void updateStatusBarColor() {
-        int startColor = getWindow().getStatusBarColor();
-        int endColor;
-
-        try {
-            if (getWindow().findViewById(R.id.homeScrolLView).getScrollY() != 0)
-                return;
-        } catch (NullPointerException ignored) {}
-
-        if (startColor == statusBarDefaultColor)
-            endColor = statusBarScrolledColor;
-        else
-            endColor = statusBarDefaultColor;
-
-        ValueAnimator colorAnimation = ValueAnimator.ofArgb(startColor, endColor);
-        colorAnimation.setDuration(250);
-
-        colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animator) {
-                int color = (int) animator.getAnimatedValue();
-                Window window = getWindow();
-                window.setStatusBarColor(color);
-            }
-        });
-
-        colorAnimation.start();
     }
 
     public void updateSearchView2(RecyclerView rv) {
@@ -413,7 +397,7 @@ public class MainActivity extends AppCompatActivity {
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
 
-            hideSearchView();
+            onBackPressed();
         });
 
         MaterialButton filterSearchViewButton = searchView.findViewById(R.id.filterSearchView);
@@ -546,5 +530,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return colorSurfaceVariant;
+    }
+
+    public void call_updateFavoritesPersonal(boolean trueFavoritesFalsePersonal, Integer elementPosition, boolean trueAddedFalseRemoved) {
+        fragmentMyRules.updateFavoritesPersonal(trueFavoritesFalsePersonal, elementPosition, trueAddedFalseRemoved);
+    }
+
+    public void call_toggleCard() {
+        fragmentHome.toggleCard();
     }
 }
