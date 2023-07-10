@@ -124,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Use Rule in Design"
-        app:icon="@drawable/baseline_create_24"
+        app:icon="@drawable/round_create_24"
         app:layout_constraintStart_toStartOf="@+id/ruleCard"
         app:layout_constraintTop_toBottomOf="@+id/ruleCard" />
 

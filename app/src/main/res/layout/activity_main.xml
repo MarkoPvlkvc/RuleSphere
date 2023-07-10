@@ -33,9 +33,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:textColor="?attr/colorOnSurface"
-            android:textAppearance="?attr/textAppearanceLabelMedium"
             android:layout_marginTop="-46dp"
             android:text="RuleSphere"
+            android:fontFamily="@font/roboto_medium"
             android:textSize="20sp" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -57,7 +57,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"
+        app:itemRippleColor="@android:color/transparent" />
 
     <FrameLayout
         android:id="@+id/searchViewFrameLayout"
@@ -69,5 +70,6 @@
         android:id="@+id/addRuleFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:elevation="3dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

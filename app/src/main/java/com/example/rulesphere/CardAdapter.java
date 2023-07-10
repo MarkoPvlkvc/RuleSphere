@@ -30,6 +30,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -95,15 +97,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         String quoteId = quote.id + "";
         holder.id.setText(quoteId);
 
-        ConstraintLayout constraintLayout = (ConstraintLayout) holder.materialCardView.getParent();
-        int padding;
-        if (position == getItemCount() - 1) {
-            padding = (int) Math.floor(120 * mainActivity.getResources().getDisplayMetrics().density);
-        } else {
-            padding = (int) Math.floor(20 * mainActivity.getResources().getDisplayMetrics().density);
-        }
-        constraintLayout.setPadding(0, 0, 0, padding);
-
         if(quote.isFavorite) {
             holder.favoriteButton.setChecked(true);
             holder.favoriteButton.setBackground(null);
@@ -111,7 +104,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             holder.materialCardView.setChecked(true);
             holder.materialCardView.setCardForegroundColor(null);
 
-            holder.materialCardView.setStrokeWidth(3);
+            holder.materialCardView.setStrokeWidth(5);
         } else {
             holder.favoriteButton.setChecked(false);
             holder.materialCardView.setChecked(false);
@@ -119,20 +112,20 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             holder.materialCardView.setStrokeWidth(0);
         }
 
+        RecyclerView rv = mainActivity.findViewById(R.id.recycler_view_myRules);
+        MaterialButton myRulesFavorites = mainActivity.findViewById(R.id.myRulesFavorites);
+
         holder.favoriteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MaterialButton favoriteButton = (MaterialButton) view;
 
-                ConstraintLayout constraintLayout = (ConstraintLayout) view.getParent();
-                MaterialCardView materialCardView = (MaterialCardView) constraintLayout.getParent();
-                TextView ruleId = (TextView) constraintLayout.findViewById(R.id.quote_id);
+                //ConstraintLayout constraintLayout = (ConstraintLayout) view.getParent();
+                MaterialCardView materialCardView = holder.materialCardView;
+                TextView ruleId = holder.id;
 
                 mainActivity.favoriteAQuote(ruleId.getText().toString());
-
-                materialCardView.setCheckedIcon(null);
                 materialCardView.toggle();
-                favoriteButton.setBackground(null);
                 materialCardView.setCardForegroundColor(null);
 
                 if (materialCardView.isChecked()) {
@@ -142,10 +135,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 }
 
                 try {
-                    RecyclerView rv = mainActivity.findViewById(R.id.recycler_view_myRules);
-
-                    if (rv != null)
-                        mainActivity.updateMyRulesList(rv);
+                    if (rv != null && myRulesFavorites.isChecked()) {
+                        int position = holder.getAdapterPosition();
+                        if (materialCardView.isChecked()) {
+                            mainActivity.call_updateFavoritesPersonal(true, position, true);
+                        } else {
+                            mainActivity.call_updateFavoritesPersonal(true, position, false);
+                        }
+                    }
                 } catch (NullPointerException ignored) {}
 
                 Animation animation = AnimationUtils.loadAnimation(view.getContext(), R.anim.like_anim);
@@ -214,7 +211,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                         }
                     });
 
-                    mainActivity.updateMyQuotesList(mainActivity.findViewById(R.id.recycler_view_myRules));
+                    int position = holder.getAdapterPosition();
+                    mainActivity.call_updateFavoritesPersonal(false, position, false);
                     parentView.removeView(searchContext);
                 });
                 return true;
@@ -254,14 +252,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                     mainActivity.favoriteAQuote(ruleId.getText().toString());
 
                     try {
-                        RecyclerView rv = mainActivity.findViewById(R.id.recycler_view_myRules);
-                        MaterialButton myRulesFavorites = mainActivity.findViewById(R.id.myRulesFavorites);
-
-                        if (rv != null) {
-                            if (myRulesFavorites.isChecked()) {
-                                mainActivity.updateMyRulesList(rv);
+                        if (rv != null && myRulesFavorites.isChecked()) {
+                            int position = holder.getAdapterPosition();
+                            if (materialCardView.isChecked()) {
+                                mainActivity.call_updateFavoritesPersonal(true, position, true);
                             } else {
-                                mainActivity.updateMyQuotesList(rv);
+                                mainActivity.call_updateFavoritesPersonal(true, position, false);
                             }
                         }
                     } catch (NullPointerException ignored) {}
@@ -295,5 +291,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     public RuleSphereDatabase getDb() {
         return RuleSphereDatabase.getInstance(mainActivity);
+    }
+
+    public void setQuotes(List<Quote> q) {
+        int previousSize = quotes.size();
+        quotes = q;
+        lastPosition = -1; // So that animations start again
     }
 }
